@@ -3,9 +3,9 @@ package com.barbidule.barbidule.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 /**
- * MainController
+ * MainController est une classe ou sont présents les divers controllers
+ * permettant de naviguer sur le site.
  */
 @Controller
 public class MainController {
