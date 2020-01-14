@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap'); /*Reset CSS*/
+
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+ul {
+    list-style: none
+}
+
+button, input, select, textarea {
+    margin: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+*, *::before, *::after {
+    box-sizing: inherit
+}
+
+img, video {
+    height: auto;
+    max-width: 100%
+}
+
+iframe {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0
+}
+
+td:not([align]), th:not([align]) {
+    text-align: left
+}
+
+@font-face {
+    font-family: "Heina's hurry";
+    src: url("../fonts/Heina_hurry.ttf");
+}
+
+p {
+    font-family: 'Arial', serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+h2 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.leBarBidule {
+    margin-top: 17%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.titre_section {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.img_titre_section {
+    width: 200px;
+    height: auto;
+}
+
+.sous_titre_section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/***
+ Zone de code qui gère le reply
+ ***/
+
+div.spoiler {
+    width: 100%;
+    position: relative;
+}
+
+div.spoiler input.boutonAfficher, div.spoiler input.boutonMasquer {
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+
+div.spoiler[data-isOuvert="false"] div.contenuSpoiler {
+    display: none;
+}
+
+div.spoiler[data-isOuvert="false"] input.boutonMasquer {
+    display: none;
+}
+
+div.spoiler[data-isOuvert="true"] input.boutonAfficher {
+    display: none;
+}
+
+/***
+ Décoration du bouton qui permet de dérouler l'article.
+ ***/
+.boutonAfficher {
+    box-sizing: border-box;
+    float: right;
+    display: block;
+    width: 10rem;
+    height: auto;
+    border: 2px solid;
+    transform: scale(var(--ggs,1));
+    border-radius: 4px
+}
+.boutonAfficher::after,
+.boutonAfficher::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 5px;
+    top: 8px;
+    left: 4px
+}
+.boutonAfficher::after {
+    width: 2px;
+    height: 10px;
+    top: 4px;
+    left: 8px
+}
+
+/***
+ Décoration du bouton qui permet de fermer l'article.
+ ***/
+.boutonMasquer {
+    box-sizing: border-box;
+    float: right;
+    display: block;
+    width: 10rem;
+    height: auto;
+    border: 2px solid;
+    transform: scale(var(--ggs,1));
+    border-radius: 4px
+}
+.boutonMasquer::after,
+.boutonMasquer::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 5px;
+    top: 8px;
+    left: 4px
+}
+.boutonMasquer::after {
+    width: 2px;
+    height: 10px;
+    top: 4px;
+    left: 8px
+}
+
+/***
+ Zone de code qui gère l'affichage lorsque la largeur de
+ l'écran est superieure à 640 pixels.
+ ***/
+
+@media screen and (min-width: 640px) {
+    .leBarBidule {
+        margin-top: 0;
+    }
+}
