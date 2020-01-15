@@ -6,14 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Première ardoise du resto
+ * Ardoises du resto
  */
 @Entity
 public class FormuleDuJour {
 
     // Précision et génération de l'id de l'ardoise
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String titre;
     private String description;
@@ -21,6 +21,14 @@ public class FormuleDuJour {
 
 
     public FormuleDuJour() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitre() {

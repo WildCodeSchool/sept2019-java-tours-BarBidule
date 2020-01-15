@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel administrateur</title>
+</head>
+<body>
+<h1>Bienvenue sur l'interface d'édition du Barbidule!</h1>
+<br>
+<section id="admin">
+    <div class="change1">
+        <p>Modifier le menu</p>
+        <a th:href="@{/admin/menu}">Cliquez ici</a>
+    </div>
+    <div class="change1">
+        <p>Modifier le programation</p>
+        <a th:href="@{/admin/insertProgramation}">Cliquez ici</a>
+    </div>
+    <div class="change1">
+        <p>Modifier les données concernant les intervenants</p>
+        <a th:href="@{/admin/intervenants}">Cliquez ici</a>
+    </div>
+</section>
+<a th:href="@{/}">retourner à l'index</a>
+</body>
+</html>

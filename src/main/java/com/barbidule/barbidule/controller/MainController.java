@@ -19,6 +19,11 @@ public class MainController {
     public String affichageProgramation() {
         return "prog_A3";
     }
+
+    @GetMapping(value="/admin")
+    public String indexAdmin() {
+        return "adminPanel";
+    }
     
     
 }

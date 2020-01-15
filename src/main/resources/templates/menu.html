@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1>Bonjour, vous pouvez ici éditer votre menu</h1>
+<section class="carte">
+<ul class="carte1">
+    <p class="titre_menu">FORMULE DU JOUR</p>
+    <br>
+    <li th:text="${formuleDuJour.titre}">Assiette vegetarienne</li>
+    <li th:text="${formuleDuJour.description}">(Composée de tartinade, soupe, tarte salée, gratin, salade de crudités, fromage,
+        selon les saisons, humeurs et envies du cuisinier du jour)
+    </li>
+    <br>
+    <p th:text="${formuleDuJour.prix}">8€ / 10€ avec dessert</p>
+</ul>
+
+<form class="carte1" method="post" th:action="@{/admin/menu}" th:object="${formuleDuJour}">
+    <label for="titre">Titre du menu : </label><br>
+    <input id="titre" th:field=*{titre} type="text"><br>
+    <label for="description">Description : </label><br>
+    <textarea id="description" th:field=*{description}></textarea><br>
+    <label for="prix">prix: </label><br>
+    <input id="prix" th:field=*{prix} type="text"><br>
+    <input type="hidden" th:field="*{id}">
+    <input type="submit" value="Changer le menu">
+</form>
+</section>
+<a th:href="@{/admin/menu}">Retour</a>
+</body>
+</html>

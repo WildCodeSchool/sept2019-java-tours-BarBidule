@@ -132,8 +132,7 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     box-sizing: border-box;
     float: right;
     display: block;
-    width: 10rem;
-    height: auto;
+    padding: auto;
     border: 2px solid;
     transform: scale(var(--ggs,1));
     border-radius: 4px
@@ -165,8 +164,7 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     box-sizing: border-box;
     float: right;
     display: block;
-    width: 10rem;
-    height: auto;
+    padding: auto;
     border: 2px solid;
     transform: scale(var(--ggs,1));
     border-radius: 4px

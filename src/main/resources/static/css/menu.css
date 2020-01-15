@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+@font-face {
+    font-family: "Heina's hurry", Serif;
+    src: url("../fonts/Heina_hurry.ttf");
+}
+
+.carte{
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.carte1 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: carte;
+    align-self: start;
+    justify-self: start;
+    width: 20rem;
+    height: auto;
+    padding: 10px;
+    color: gainsboro;
+}
+input{
+    width: 18rem;
+}
+textarea{
+    width: 18rem;
+    height: auto;
+}
+
+.bouton_modifier{
+    background-color: aqua;
+}
