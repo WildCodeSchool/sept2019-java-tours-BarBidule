@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+@font-face {
+    font-family: "Heina's hurry", Serif;
+    src: url("../fonts/Heina_hurry.ttf");
+}
+
+/*Reset CSS*/
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+ul {
+    list-style: none
+}
+
+button, input, select, textarea {
+    margin: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+*, *::before, *::after {
+    box-sizing: inherit
+}
+
+img, video {
+    height: auto;
+    max-width: 100%
+}
+
+iframe {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0
+}
+
+td:not([align]), th:not([align]) {
+    text-align: left
+}
+
+
+.container-restauration {
+    margin-top: 2%;
+    display: grid;
+    grid-template: 20% 20% 20% 20% / 25% 75%;
+    grid-template-areas: "image1 titre2" "image2 carte" "image3 carte1" "image4 carte1";
+}
+
+.presentation-restauration {
+    margin-left: 2%;
+    font-family: 'Indie Flower', cursive;
+    grid-area: titre2;
+    justify-self: center;
+}
+
+.cote1 {
+    width: 100%;
+    grid-area: image1;
+}
+
+.cote2 {
+    width: 100%;
+    grid-area: image2;
+}
+
+.cote3 {
+    width: 100%;
+    grid-area: image3;
+}
+
+.cote4 {
+    width: 100%;
+    grid-area: image4;
+}
+
+.container-restauration ul {
+    list-style: none;
+    font-family: "Heina's hurry", serif;
+    color: aliceblue;
+    margin-left: 2%;
+    padding: 2%;
+    width: 25%;
+}
+
+.container-restauration ul p {
+    text-align: center;
+}
+
+/*
+    Code mettant en style les ardoises.
+*/
+.carte1 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: carte;
+    align-self: start;
+    justify-self: start;
+}
+
+.carte2 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: carte;
+    align-self: start;
+    justify-self: center;
+}
+
+.carte3 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: carte;
+    align-self: start;
+    justify-self: end;
+}
+
+.titre_menu {
+    font-weight: bold;
+    font-size: large;
+    color: antiquewhite;
+}
+
+.menu-general {
+    margin-top: 5%;
+    margin-left: 2%;
+    width: 98%;
+    height: 59%;
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: carte1;
+    align-self: start;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-restauration h2 {
+    font-family: "Heina's hurry", serif;
+    color: antiquewhite;
+    margin-left: 2%;
+    font-size: 2em;
+    align-self: center;
+}
+
+.generale p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+/*
+    Code mettant en style le contenu de la dernière ardoise.
+*/
+.grande_carte {
+    display: inline-flex;
+}
+
+.petite_carte {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 640px) {
+    .container-restauration {
+        grid-template: auto auto auto / 100%;
+    }
+
+    .cote1 {
+        display: none;
+    }
+
+    .cote2 {
+        display: none;
+    }
+
+    .cote3 {
+        display: none;
+    }
+
+    .cote4 {
+        display: none;
+    }
+
+    .presentation-restauration {
+        font-family: 'Indie Flower', cursive;
+        font-weight: lighter;
+        grid-area: responsive-title;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .container-restauration ul {
+        list-style: none;
+        font-family: "Heina's hurry", serif;
+        color: aliceblue;
+        margin-left: 2%;
+        padding: 2%;
+        width: 95%;
+    }
+
+    .carte1 {
+        background-image: url(../img/surface-ardoise.jpg);
+        box-shadow: 10px 5px 5px rgb(114, 111, 111);
+        grid-area: image1;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .carte2 {
+        background-image: url(../img/surface-ardoise.jpg);
+        box-shadow: 10px 5px 5px rgb(114, 111, 111);
+        grid-area: image2;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .carte3 {
+        background-image: url(../img/surface-ardoise.jpg);
+        box-shadow: 10px 5px 5px rgb(114, 111, 111);
+        grid-area: image3;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .menu-general {
+        margin-top: 5%;
+        margin-left: 2%;
+        width: 98%;
+        height: auto;
+        background-image: url(../img/surface-ardoise.jpg);
+        box-shadow: 10px 5px 5px rgb(114, 111, 111);
+        grid-area: image4;
+        align-self: start;
+        justify-self: center;
+        display: flex;
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link data-th-href="@{/css/restauration.css}" href="../static/css/restauration.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/header.css}" href="../static/css/header.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/js/main.js}" href="../static/js/main.js" media="all" rel="stylesheet" type="text/css"/>
+    <title>Bar Bidule</title>
+</head>
+
+<body>
+<!-- import du menu/header-->
+<header th:replace="index :: header"/>
+<br>
+<!-- import logo du Titre-->
+
+<!-- Section page-->
+<div class="leBarBidule">
+
+    <!-- Zone Jeu et jardin-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/lectures_partages.jpg" th:src="@{/img/lectures_partages.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="espace">L'espace de jeux et jardin</h1>
+            <p>Au Bar Bidule il y a une belle salle de jeux où tu peux jouer à plein de choses : jeux de société,
+                de construction, puzzles, dînette, déguisements... </p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>tu peux aussi dessiner, peindre, faire de la pâte à modeler,
+                te (faire) maquiller, faire de la musique.<br><br>
+                Il y a de la lecture pour tous les goûts, contes, bandes dessinées, magazines... <br><br>
+                Et puis tu as même le droit de ne rien faire et de rêvasser, ou encore improviser un spectacle ou un
+                concert avec les copains et copines. <br><br>
+                Quand il fait beau tu peux jouer dehors dans la cour, et même jardiner. Les enfants de tous âges
+                sont les bienvenus, les bébés aussi trouveront de quoi s'occuper !
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <!-- Zone Restauration-->
+    <div class="titre_section">
+        <img alt-title="exemple d'assiette" class="img_titre_section" src="../static/img/titre_resto.jpg"
+             th:src="@{/img/titre_resto.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="resto">Le bar et resto Bidule</h1>
+            <br>
+            <p>Le Bar Bidule, c'est aussi un restaurant !!!</p>
+        </div>
+    </div>
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+
+            <section class="container-restauration">
+                <div class="presentation-restauration">
+                    <br>
+                    <p>Tous les mercredis midis, vous pouvez venir manger entre amis, en famille, entre collègues.
+                        Les bénévoles sont aux fourneaux et vous accueillent autour d'un menu végétarien, de saison
+                        et
+                        concocté
+                        à base de produits essentiellement bio et/ou locaux !</p><br>
+                    <p>2 formules :</p><br>
+                </div>
+                <!-- colone de photos sur le coté-->
+                <img alt-title="#" class="cote1" src="../static/img/IMG_1255mode2.JPG"
+                     th:src="@{/img/IMG_1255mode2.JPG}"/>
+                <img alt-title="#" class="cote2" src="../static/img/IMG_1274mode2.JPG"
+                     th:src="@{/img/IMG_1274mode2.JPG}"/>
+                <img alt-title="#" class="cote3" src="../static/img/IMG_1426mode2.JPG"
+                     th:src="@{/img/IMG_1426mode2.JPG}"/>
+                <img alt-title="#" class="cote4" src="../static/img/resto_mercredi.jpg"
+                     th:src="@{/img/resto_mercredi.jpg}"/>
+
+                <!-- menu-->
+                <ul class="carte1">
+                    <p class="titre_menu">FORMULE DU JOUR</p>
+                    <br>
+                    <li>Assiette vegetarienne</li>
+                    <li>(Composée de tartinade, soupe, tarte salée, gratin, salade de crudités, fromage,
+                        selon les saisons, humeurs et envies du cuisinier du jour)
+                    </li>
+                    <br>
+                    <p>8€ / 10€ avec dessert</p>
+                </ul>
+                <ul class="carte2">
+                    <p class="titre_menu">MENU BIDULE</p>
+                    <br>
+                    <li>Croque-monsieur végétarien / crudités</li>
+                    <li>Préparer sur place</li>
+                    <br>
+                    <p>3€ / 5€ avec dessert</p>
+                </ul>
+
+                <ul class="carte3">
+                    <p class="titre_menu">BOISSONS</p>
+                    <br>
+                    <li>Sirop</li>
+                    <li>Thé</li>
+                    <li>Café</li>
+                    <li>Chocolat</li>
+                    <br>
+                    <p>2€</p>
+                </ul>
+
+                <section class="menu-general">
+                    <div class="grande_carte">
+                        <div class="petite_carte">
+                            <h2>En permanence : </h2>
+                            <br>
+                            <ul>
+                                <li>Glaces</li>
+                                <li>Gâteau choco</li>
+                                <li>Crêpes</li>
+                            </ul>
+                        </div>
+                        <div class="petite_carte">
+                            <h2>Occasionnels :</h2>
+                            <br>
+                            <ul>
+                                <li>Cookies</li>
+                                <li>Muffins</li>
+                                <li>Et tout un tas d'autres gourmandises !</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <!-- Les ateliers-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/couture.jpg" th:src="@{/img/couture.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="ateliers">Les ateliers</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, velit sunt. Quod at accusamus,
+                ducimus
+                doloremque autem amet mollitia sint laborum aliquam tempore quasi sapiente harum corporis dolores
+                distinctio
+                eum.</p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
+                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- Les spectacles et concerts-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/concert01.jpg" th:src="@{/img/concert01.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="spectacle">Les spectacles et concerts</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis doloribus iste
+                necessitatibus, voluptatem ex similique fugiat numquam repellat excepturi autem velit quam vel
+                ipsam, omnis
+                ipsa est, neque unde!</p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
+                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
+            </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- Les anniversaires-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/anniversaire.jpg" th:src="@{/img/anniversaire.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="anniversaires">Les anniversaires</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, numquam. Numquam, vero. Iste ea
+                possimus
+                nulla excepturi quo veritatis necessitatibus, deserunt similique quibusdam. Ab vitae amet facilis
+                molestias
+                ex sunt?</p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
+                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
+            </p>
+        </div>
+    </div>
+
+</div>
+<!-- import footer-->
+
+
+</body>
+
+</html>

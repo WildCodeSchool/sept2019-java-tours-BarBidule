@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Le Bar Bidule</title>
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../static/css/header.css" data-th-href="@{/css/header.css}" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../static/css/defaut_text.css" data-th-href="@{/css/defaut_text.css}" />
+</head>
+<body>
+    <header th:fragment="header">
+        <!--logo-->
+        <div class="logo">
+            <a href="/index" th:href="@{/}">
+                <img th:src="@{/img/logo_titre.png}" alt="logo bar bidule">
+                <img th:src="@{/img/mais_pas_que.png}" alt="logo mais pas que">
+            </a>
+        </div>
+        <!--Menu déroulant-->
+        <nav>
+            <div class="conteneur-nav">
+            <label for="mobile">Afficher le menu</label>
+            <input type="checkbox" id="mobile" role="button">
+            <ul>
+                <li class="deroulant"><a th:href="@{/leBarBidule}">Le Bar Bidule &ensp;</a>
+                    <ul class="sous">
+                        <li><a href="/leBarBidule/#espace">L'espace de jeux/jardin</a></li>
+                        <li><a href="/leBarBidule/#resto">Le bar et resto Bidule</a></li>
+                        <li><a href="/leBarBidule/#ateliers">Les ateliers</a></li>
+                        <li><a href="/leBarBidule/#spectacle">les spectacles et concerts</a></li>
+                        <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
+                    </ul>
+                </li>    
+                <li class="deroulant"><a href="#">Un Café des Enfants &ensp;</a>
+                    <ul class="sous">
+                        <li><a href="#">C'est quoi un Café des Enfants ?</a></li>
+                        <li><a href="#">L'histoire du Bar Bidule</a></li>
+                        <li><a href="#">Les adhérents</a></li>
+                    </ul>
+                </li>   
+                <li class="deroulant"><a href="#">Mais pas que... &ensp;</a>
+                    <ul class="sous">
+                        <li><a href="#">Le Bar Bidule hors les murs</a></li>
+                        <li><a href="#">Les copains du Bar Bidule</a></li>
+                        <li><a href="#">Mise à disposition <br/>mutualisation du local</a></li>
+                        <li><a href="#">L'action sociale et médico-sociale</a></li>
+                    </ul>
+                </li>
+                <li class="deroulant"><a href="#">Contactez-nous &ensp;</a>
+                    <ul class="sous">
+                        <li><a href="#">Formulaire de contact</a></li>
+                        <li><a href="#">Plan d'acces</a></li>
+                        <li><a href="#">Télephone</a></li>
+                        <li><a href="#">Adresse</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </header><br>
+
+    <div class="leBarBidule">
+
+    <h1>Bienvenue au Bar Bidule</h1><br>
+
+    <p>Vous trouverez ici tout ce qu'il faut pour comprendre qui nous sommes</p><br>
+
+    <h2>Voici notre programation d'évènements pour le mois</h2><br>
+    <p>Affichez la <a href="../static/documents/prog_A3.jpg" th:href="@{/documents/prog_A3.jpg}">ici</a></p>
+
+    <p>Ou téléchargez la <a href="../static/documents/prog_A3.jpg" th:href="@{/documents/prog_A3.jpg}" download="../static/documents/prog_A3.jpg">ici</a></p>
+    </div>
+</body>
+</html>

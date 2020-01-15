@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap'); /*Reset CSS*/
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+
+header{
+    display: inline-flex;
+    font-family: 'Indie Flower', cursive;
+    position: fixed;
+}
+.logo img{
+    width: 100px;
+    height: auto;
+}
+nav{
+    width: 70%;
+    margin: 0 auto;
+    background-color: white;
+}
+.conteneur-nav{
+    position: absolute;
+    width: 100%;
+}
+nav{
+    background-color: transparent;
+}
+nav input[type=checkbox]{
+    display: none;
+}
+nav label{
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: gold;
+    opacity: 80%;
+}
+nav ul{
+    display: none;
+    list-style-type: none;
+    background-color: #555;
+}
+nav input[type=checkbox]:checked + ul{
+    display: flex;
+    flex-flow : column wrap;
+}
+nav ul li{
+    flex: 1 1 auto;
+    text-align: center;
+    
+    
+}
+nav > div > ul > li > a{
+    color: white;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 0px;
+    font-size: 13px;
+}
+.sous{
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 1000;
+    
+}
+
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    padding: 5px;
+    font-size: 12px;
+    background-color: RGBa(200,200,200,0.8);
+}
+
+@media screen and (min-width: 900px){
+    .logo img{
+        width: 250px;
+        margin: 2%;
+    }
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+    }
+    nav{
+        width: 80%;
+    }
+    .conteneur-nav{
+        position: static;
+    }
+    nav label, nav input{
+        display: none;
+    }
+    nav input[type=checkbox]:checked + ul, nav ul{
+        display: flex;
+        flex-flow: row wrap;
+        background-color: white;
+    }
+    nav ul li{
+        position: relative;
+    }
+    nav > div > ul > li > a{
+        color: black;
+    }
+    nav a{
+        border-bottom: 2px solid transparent;
+        padding: 10px 0px;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+    nav a:hover{
+        color: orange;
+        border-bottom: 2px solid gold;
+    }
+    .sous{
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        font-family: Arial, serif;
+    }
+    nav > div > ul li:hover .sous{
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .sous a{
+        border-bottom: none;
+        background-color: white;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    .sous a:hover{
+        border-bottom: none;
+        background-color: RGBa(200,200,200,0.1);
+    }
+
+}
