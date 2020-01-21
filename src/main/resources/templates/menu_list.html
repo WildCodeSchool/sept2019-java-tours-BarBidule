@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1>Bonjour, choisissez le menu à modifier</h1>
+<br>
+<section class="carte">
+    <ul>
+        <li th:each="formuleDuJour : ${formulesDuJour}" class="carte1">
+            <h3 class="titre_menu" th:text="${formuleDuJour.titreMenu}"/>
+            <br>
+            <p th:text="${formuleDuJour.titre}"/>
+            <br>
+            <p th:text="${formuleDuJour.description}"/>
+            <br>
+            <p th:text="${formuleDuJour.prix}"/>
+            <br>
+            <a class="bouton_modifier" th:href="@{/admin/menu/{id} (id=${formuleDuJour.id})}">Modifier ce menu</a>
+        </li>
+    </ul>
+</section>
+<br>
+<a class="bouton_modifier" th:href="@{/admin}">Retour à la page d'administration</a>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.barbidule.barbidule.controller;
+package com.barbidule.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +18,11 @@ public class MainController {
     @GetMapping(value="/documents/prog_A3")
     public String affichageProgramation() {
         return "prog_A3";
+    }
+
+    @GetMapping(value="/admin")
+    public String indexAdmin() {
+        return "admin_panel";
     }
     
     
