@@ -25,17 +25,6 @@ public class IntervenantController {
     @Autowired
     private IntervenantRepository intervenantRepository;
 
-    // Controleur de la page visiteur (normal)
-    @GetMapping(value = "/leBarBidule")
-    public String barBidule(Model model) {
-        List<Intervenant> intervenants = intervenantRepository.findAll();
-        if (intervenants.size() > 0) {
-            model.addAttribute("intervenants", intervenants);
-            return "bar_bidule";
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'intervenant n'existe pas");
-    }
-
     // Controller admin qui affiche la liste des intervenants.
     @GetMapping(value = "/admin/intervenant")
     public String index(Model model) {

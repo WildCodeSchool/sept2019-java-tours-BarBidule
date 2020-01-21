@@ -25,16 +25,6 @@ public class MenuController {
     @Autowired
     private FormuleDuJourRepository formuleDuJourRepository;
 
-    // Controleur de la page visiteur (normal)
-    @GetMapping(value = "/leBarBidule")
-    public String barBidule(Model model) {
-        List<FormuleDuJour> formulesDuJour = formuleDuJourRepository.findAll();
-        if (formulesDuJour.size() > 0) {
-            model.addAttribute("formulesDuJour", formulesDuJour);
-            return "bar_bidule";
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "La formule n'existe pas");
-    }
 
     // Controller admin qui affiche la liste des ardoises.
     @GetMapping(value = "/admin/menu")
