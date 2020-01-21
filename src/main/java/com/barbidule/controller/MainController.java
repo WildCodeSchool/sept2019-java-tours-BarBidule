@@ -29,17 +29,17 @@ public class MainController {
 
     // --------- Mapping général du site -------------
 
-    @GetMapping(value="/")
+    @GetMapping(value = "/")
     public String index() {
         return "index.html";
     }
 
-    @GetMapping(value="/documents/prog_A3")
+    @GetMapping(value = "/documents/prog_A3")
     public String affichageProgramation() {
         return "prog_A3";
     }
 
-    @GetMapping(value="/admin")
+    @GetMapping(value = "/admin")
     public String indexAdmin() {
         return "admin_panel";
     }
@@ -63,5 +63,5 @@ public class MainController {
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'intervenant ou le menu n'existe pas");
     }
-    
+
 }

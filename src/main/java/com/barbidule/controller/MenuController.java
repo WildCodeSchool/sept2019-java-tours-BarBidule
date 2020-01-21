@@ -28,7 +28,7 @@ public class MenuController {
 
     // Controller admin qui affiche la liste des ardoises.
     @GetMapping(value = "/admin/menu")
-    public String index(Model model) {
+    public String displayAll(Model model) {
         List<FormuleDuJour> formulesDuJour = formuleDuJourRepository.findAll();
         if (formulesDuJour.size() > 0) {
             model.addAttribute("formulesDuJour", formulesDuJour);
@@ -39,7 +39,7 @@ public class MenuController {
 
     // Controller qui affiche l'ardoise à éditer.
     @GetMapping(value = "/admin/menu/{id}")
-    public String index(@PathVariable int id, Model model) {
+    public String edit(@PathVariable int id, Model model) {
         Optional<FormuleDuJour> formuleDuJour = formuleDuJourRepository.findById(id);
         if (formuleDuJour.isPresent()) {
             model.addAttribute("formuleDuJour", formuleDuJour.get());
@@ -50,7 +50,7 @@ public class MenuController {
 
     // Controller qui permet la modification et l'enregistrement de l'ardoise.
     @PostMapping("/admin/menu")
-    public String editFormule(@Valid FormuleDuJour formuleDuJour, BindingResult bindingResult, Model model) {
+    public String saveEdit(@Valid FormuleDuJour formuleDuJour, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "menu";
         }
