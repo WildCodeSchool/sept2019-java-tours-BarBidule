@@ -24,6 +24,8 @@
             <p th:text="${intervenant.prix1}"/>
             <p th:text="${intervenant.prix2}"/>
             <a class="bouton" th:href="@{/admin/intervenant/{id} (id=${intervenant.id})}">Modifier cet intervenant</a>
+            <a class="bouton" th:href="@{/admin/intervenant/delete(id=${intervenant.id})}">Supprimer cet intervenant</a>
+
         </li>
         <a class="bouton" th:href="@{/admin/intervenants}">Créer un nouvel intervenant</a>
 

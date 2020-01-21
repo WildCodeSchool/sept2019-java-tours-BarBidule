@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
@@ -71,6 +72,14 @@ public class IntervenantController {
         }
         // Sauvegarde en base de donnée de l'intervenant.
         intervenantRepository.save(intervenant);
+        return "redirect:/admin/intervenants";
+    }
+
+
+    // Controller qui permet la suppression de l'intervenant.
+    @GetMapping("/admin/intervenant/delete")
+    public String deleteIntervenant(@RequestParam int id) {
+        intervenantRepository.deleteById(id);
         return "redirect:/admin/intervenants";
     }
 
