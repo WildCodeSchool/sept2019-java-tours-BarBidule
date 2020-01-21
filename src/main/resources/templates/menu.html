@@ -11,28 +11,34 @@
 <body>
 <h1>Bonjour, vous pouvez ici éditer votre menu</h1>
 <section class="carte">
-<ul class="carte1">
-    <p class="titre_menu">FORMULE DU JOUR</p>
-    <br>
-    <li th:text="${formuleDuJour.titre}">Assiette vegetarienne</li>
-    <li th:text="${formuleDuJour.description}">(Composée de tartinade, soupe, tarte salée, gratin, salade de crudités, fromage,
-        selon les saisons, humeurs et envies du cuisinier du jour)
-    </li>
-    <br>
-    <p th:text="${formuleDuJour.prix}">8€ / 10€ avec dessert</p>
-</ul>
+    <ul class="carte1">
+        <li>
+            <h3 class="titre_menu" th:text="${formuleDuJour.titreMenu}">FORMULE DU JOUR</h3>
+            <br>
+            <p th:text="${formuleDuJour.titre}">Assiette vegetarienne</p>
+            <p th:text="${formuleDuJour.description}">(Composée de tartinade, soupe, tarte salée, gratin, salade de
+                crudités, fromage,
+                selon les saisons, humeurs et envies du cuisinier du jour)
+            </p>
+            <br>
+            <p th:text="${formuleDuJour.prix}">8€ / 10€ avec dessert</p>
+        </li>
+    </ul>
 
-<form class="carte1" method="post" th:action="@{/admin/menu}" th:object="${formuleDuJour}">
-    <label for="titre">Titre du menu : </label><br>
-    <input id="titre" th:field=*{titre} type="text"><br>
-    <label for="description">Description : </label><br>
-    <textarea id="description" th:field=*{description}></textarea><br>
-    <label for="prix">prix: </label><br>
-    <input id="prix" th:field=*{prix} type="text"><br>
-    <input type="hidden" th:field="*{id}">
-    <input type="submit" value="Changer le menu">
-</form>
+    <form class="carte1" method="post" th:action="@{/admin/menu}" th:object="${formuleDuJour}">
+        <label for="titre_menu">Nom du plat : </label><br>
+        <input id="titre_menu" th:field=*{titreMenu} type="text"><br>
+        <label for="titre">Nom du plat : </label><br>
+        <input id="titre" th:field=*{titre} type="text"><br>
+        <label for="description">Description : </label><br>
+        <textarea id="description" th:field=*{description}></textarea><br>
+        <label for="prix">prix: </label><br>
+        <input id="prix" th:field=*{prix} type="text"><br>
+        <input th:field="*{id}" type="hidden">
+        <input type="submit" value="Changer le menu">
+    </form>
 </section>
-<a th:href="@{/admin/menu}">Retour</a>
+<br>
+<a class="bouton_modifier" th:href="@{/admin/menu}">Retour</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.barbidule.barbidule.controller;
+package com.barbidule.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ public class MainController {
 
     @GetMapping(value="/admin")
     public String indexAdmin() {
-        return "adminPanel";
+        return "admin_panel";
     }
     
     

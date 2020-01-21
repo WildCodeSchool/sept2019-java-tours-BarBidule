@@ -10,19 +10,23 @@
 </head>
 <body>
 <h1>Bonjour, choisissez le menu à modifier</h1>
+<br>
 <section class="carte">
-    <ul class="carte1">
-        <li th:each="formuleDuJour : ${formulesDuJour}">
+    <ul>
+        <li th:each="formuleDuJour : ${formulesDuJour}" class="carte1">
+            <h3 class="titre_menu" th:text="${formuleDuJour.titreMenu}"/>
+            <br>
             <p th:text="${formuleDuJour.titre}"/>
             <br>
             <p th:text="${formuleDuJour.description}"/>
             <br>
             <p th:text="${formuleDuJour.prix}"/>
+            <br>
             <a class="bouton_modifier" th:href="@{/admin/menu/{id} (id=${formuleDuJour.id})}">Modifier ce menu</a>
         </li>
     </ul>
-
 </section>
-<a th:href="@{/admin}">Retour à la page d'administration</a>
+<br>
+<a class="bouton_modifier" th:href="@{/admin}">Retour à la page d'administration</a>
 </body>
 </html>

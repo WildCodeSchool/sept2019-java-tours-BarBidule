@@ -80,73 +80,33 @@
                     <p>Tous les mercredis midis, vous pouvez venir manger entre amis, en famille, entre collègues.
                         Les bénévoles sont aux fourneaux et vous accueillent autour d'un menu végétarien, de saison
                         et
-                        concocté
-                        à base de produits essentiellement bio et/ou locaux !</p><br>
+                        concocté à base de produits essentiellement bio et/ou locaux !</p><br>
                     <p>2 formules :</p><br>
                 </div>
                 <!-- colone de photos sur le coté-->
-                <img alt-title="#" class="cote1" src="../static/img/IMG_1255mode2.JPG"
-                     th:src="@{/img/IMG_1255mode2.JPG}"/>
-                <img alt-title="#" class="cote2" src="../static/img/IMG_1274mode2.JPG"
-                     th:src="@{/img/IMG_1274mode2.JPG}"/>
-                <img alt-title="#" class="cote3" src="../static/img/IMG_1426mode2.JPG"
-                     th:src="@{/img/IMG_1426mode2.JPG}"/>
-                <img alt-title="#" class="cote4" src="../static/img/resto_mercredi.jpg"
-                     th:src="@{/img/resto_mercredi.jpg}"/>
+                <div class="sideimg">
 
+
+                    <img alt-title="#" class="cote1" src="../static/img/IMG_1255mode2.JPG"
+                         th:src="@{/img/IMG_1255mode2.JPG}"/>
+                    <img alt-title="#" class="cote2" src="../static/img/IMG_1274mode2.JPG"
+                         th:src="@{/img/IMG_1274mode2.JPG}"/>
+                    <img alt-title="#" class="cote3" src="../static/img/IMG_1426mode2.JPG"
+                         th:src="@{/img/IMG_1426mode2.JPG}"/>
+                    <img alt-title="#" class="cote4" src="../static/img/resto_mercredi.jpg"
+                         th:src="@{/img/resto_mercredi.jpg}"/>
+                </div>
                 <!-- menu-->
-                <ul class="carte1">
-                    <p class="titre_menu">FORMULE DU JOUR</p>
-                    <br>
-                    <li>Assiette vegetarienne</li>
-                    <li>(Composée de tartinade, soupe, tarte salée, gratin, salade de crudités, fromage,
-                        selon les saisons, humeurs et envies du cuisinier du jour)
-                    </li>
-                    <br>
-                    <p>8€ / 10€ avec dessert</p>
+                <ul class="carte">
+                    <li th:class="|carte${formuleDuJourStat.count}|" th:each="formuleDuJour : ${formulesDuJour}">
+                        <h3 class="titre_menu" th:text="${formuleDuJour.titreMenu}"/>
+                        <br>
+                        <p th:text="${formuleDuJour.titre}"/>
+                        <br>
+                        <p th:text="${formuleDuJour.description}"/>
+                        <br>
+                        <p th:text="${formuleDuJour.prix}"/>
                 </ul>
-                <ul class="carte2">
-                    <p class="titre_menu">MENU BIDULE</p>
-                    <br>
-                    <li>Croque-monsieur végétarien / crudités</li>
-                    <li>Préparer sur place</li>
-                    <br>
-                    <p>3€ / 5€ avec dessert</p>
-                </ul>
-
-                <ul class="carte3">
-                    <p class="titre_menu">BOISSONS</p>
-                    <br>
-                    <li>Sirop</li>
-                    <li>Thé</li>
-                    <li>Café</li>
-                    <li>Chocolat</li>
-                    <br>
-                    <p>2€</p>
-                </ul>
-
-                <section class="menu-general">
-                    <div class="grande_carte">
-                        <div class="petite_carte">
-                            <h2>En permanence : </h2>
-                            <br>
-                            <ul>
-                                <li>Glaces</li>
-                                <li>Gâteau choco</li>
-                                <li>Crêpes</li>
-                            </ul>
-                        </div>
-                        <div class="petite_carte">
-                            <h2>Occasionnels :</h2>
-                            <br>
-                            <ul>
-                                <li>Cookies</li>
-                                <li>Muffins</li>
-                                <li>Et tout un tas d'autres gourmandises !</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
 
             </section>
         </div>
@@ -161,11 +121,9 @@
              src="../static/img/couture.jpg" th:src="@{/img/couture.jpg}"/>
         <div class="sous_titre_section">
             <h1 id="ateliers">Les ateliers</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, velit sunt. Quod at accusamus,
-                ducimus
-                doloremque autem amet mollitia sint laborum aliquam tempore quasi sapiente harum corporis dolores
-                distinctio
-                eum.</p>
+            <p>Plus qu'un simple café, au Bar Bidule, tu peux aussi participer à des ateliers en tout
+                genre avec ton papa, ta maman, ta nounou, ta mamie!
+                Une belle occasion de découvrir de nouvelles activités sans engagement dans la durée.</p>
         </div>
     </div>
     <!-- Code permettant de cacher le contenu-->
@@ -191,10 +149,8 @@
              src="../static/img/concert01.jpg" th:src="@{/img/concert01.jpg}"/>
         <div class="sous_titre_section">
             <h1 id="spectacle">Les spectacles et concerts</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis perspiciatis doloribus iste
-                necessitatibus, voluptatem ex similique fugiat numquam repellat excepturi autem velit quam vel
-                ipsam, omnis
-                ipsa est, neque unde!</p>
+            <p>Au Bar Bidule, tu peux aussi venir voir des spectacles et concerts d'artistes de la région mais pas que !
+                Plus d'infos consultables dans la PROG' mensuelle.</p>
         </div>
     </div>
     <!-- Code permettant de cacher le contenu-->
@@ -205,9 +161,10 @@
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
-                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
+            <p>Prix libre / chapeau pour les adhérents
+                5€ par personne pour les non-adhérents
+                sur réservation . <br><br>
+                Et si t'as envie de proposer un spectacle, n’hésite pas à nous contacter !
             </p>
         </div>
     </div>
@@ -220,11 +177,7 @@
              src="../static/img/anniversaire.jpg" th:src="@{/img/anniversaire.jpg}"/>
         <div class="sous_titre_section">
             <h1 id="anniversaires">Les anniversaires</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, numquam. Numquam, vero. Iste ea
-                possimus
-                nulla excepturi quo veritatis necessitatibus, deserunt similique quibusdam. Ab vitae amet facilis
-                molestias
-                ex sunt?</p>
+            <p>Au bar bidule, tu peux aussi venir y fêter ton anniversaire avec ta famille et tes amis !</p>
         </div>
     </div>
     <!-- Code permettant de cacher le contenu-->
@@ -235,10 +188,30 @@
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
-                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
-            </p>
+            <section class="anniversaire">
+                <p>2 possibilités s'offrent à toi :</p>
+                <br>
+                <h2>Faire la fête sur les horaires d'ouverture du bar :</h2>
+                <br>
+                <p>1 sirop par enfant <br>
+                    1 gâteau au chocolat confectionné et décoré avec les enfants <br>
+                    Cartons d'invitation fournis <br>
+                    Maquillage fourni <br>
+                    Matériel fourni pour faire un atelier de fabrication d'une carte d'anniversaire <br>
+                    Jeux et jouets divers sur place <br>
+                    6€ par enfant <br>
+                    Si besoin un bénévole peut participer à l'encadrement et l'animation de l'anniversaire. <br>
+                    Réservé aux adhérents
+                </p><br><br>
+                <h2>Faire la fête sur les horaires de fermeture du bar :</h2><br>
+                <p>on se met d'accord sur les horaires, on te laisse les clés et tout le matériel du local à
+                    disposition pour jouer, cuisiner et fêter ton anniversaire comme il se doit !
+                    <br>
+                    50€ la mise à disposition du local <br>
+                    Réservé aux adhérents
+                </p><br>
+                <p>vous pouvez télécharger un carton d'invitation <a th:href="@{/documents/carton_invitation.pdf}">ici</a></p>
+            </section>
         </div>
     </div>
 

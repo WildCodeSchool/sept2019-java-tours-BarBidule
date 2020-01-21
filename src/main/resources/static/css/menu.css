@@ -5,31 +5,68 @@
     src: url("../fonts/Heina_hurry.ttf");
 }
 
-.carte{
-    margin: 2%;
+h1 {
+    margin-bottom: 5%;
+}
+
+.carte ul {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .carte1 {
     background-image: url(../img/surface-ardoise.jpg);
     box-shadow: 10px 5px 5px rgb(114, 111, 111);
     grid-area: carte;
-    align-self: start;
-    justify-self: start;
+    align-self: center;
     width: 20rem;
     height: auto;
     padding: 10px;
-    color: gainsboro;
 }
-input{
+
+.carte1 h3 {
+    font-family: "Heina's hurry", serif;
+    color: #faebd7;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.carte1 p {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.carte {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+input {
     width: 18rem;
 }
-textarea{
+
+textarea {
     width: 18rem;
     height: auto;
 }
 
-.bouton_modifier{
-    background-color: aqua;
+label {
+    color: bisque;
+}
+
+.bouton_modifier {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    text-decoration: none;
+    border-radius: 15%;
+    padding: 1%;
+}
+
+.bouton_modifier:hover {
+    color: grey;
 }

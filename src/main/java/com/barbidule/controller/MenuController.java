@@ -1,7 +1,7 @@
-package com.barbidule.barbidule.controller;
+package com.barbidule.controller;
 
-import com.barbidule.barbidule.entity.FormuleDuJour;
-import com.barbidule.barbidule.repository.FormuleDuJourRepository;
+import com.barbidule.entity.FormuleDuJour;
+import com.barbidule.repository.FormuleDuJourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -25,13 +25,13 @@ public class MenuController {
     @Autowired
     private FormuleDuJourRepository formuleDuJourRepository;
 
-    // Controleur de la page visiteur (normale)
+    // Controleur de la page visiteur (normal)
     @GetMapping(value = "/leBarBidule")
     public String barBidule(Model model) {
         List<FormuleDuJour> formulesDuJour = formuleDuJourRepository.findAll();
         if (formulesDuJour.size() > 0) {
             model.addAttribute("formulesDuJour", formulesDuJour);
-            return "leBarBidule";
+            return "bar_bidule";
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "La formule n'existe pas");
     }
@@ -42,7 +42,7 @@ public class MenuController {
         List<FormuleDuJour> formulesDuJour = formuleDuJourRepository.findAll();
         if (formulesDuJour.size() > 0) {
             model.addAttribute("formulesDuJour", formulesDuJour);
-            return "menulist";
+            return "menu_list";
         }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "La formule n'existe pas");
     }
@@ -64,7 +64,7 @@ public class MenuController {
         if (bindingResult.hasErrors()) {
             return "menu";
         }
-        //ferfer
+        // Sauvegarde en base de donnée du menu.
         formuleDuJourRepository.save(formuleDuJour);
         return "menu";
     }

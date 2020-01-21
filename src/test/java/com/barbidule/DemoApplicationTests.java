@@ -1,10 +1,10 @@
-package com.barbidule.barbidule;
+package com.barbidule;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BarbiduleApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {

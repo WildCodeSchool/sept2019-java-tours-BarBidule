@@ -56,10 +56,11 @@ td:not([align]), th:not([align]) {
 
 
 .container-restauration {
-    margin-top: 2%;
+    width: 100%;
     display: grid;
-    grid-template: 20% 20% 20% 20% / 25% 75%;
-    grid-template-areas: "image1 titre2" "image2 carte" "image3 carte1" "image4 carte1";
+    grid-template: 20% 20% 20% 20% 20%/ 25% 75%;
+    grid-template-areas: "sideimg titre2" "sideimg carte" "sideimg carte" "sideimg carte" "sideimg carte";
+    grid-gap: 10px;
 }
 
 .presentation-restauration {
@@ -69,84 +70,80 @@ td:not([align]), th:not([align]) {
     justify-self: center;
 }
 
-.cote1 {
-    width: 100%;
-    grid-area: image1;
+.sideimg {
+    display: flex;
+    flex-direction: column;
+    grid-area: sideimg;
+    justify-content: space-between;
 }
 
-.cote2 {
-    width: 100%;
-    grid-area: image2;
-}
 
-.cote3 {
-    width: 100%;
-    grid-area: image3;
-}
-
-.cote4 {
-    width: 100%;
-    grid-area: image4;
-}
-
-.container-restauration ul {
+.container-restauration ul li {
     list-style: none;
     font-family: "Heina's hurry", serif;
     color: aliceblue;
-    margin-left: 2%;
-    padding: 2%;
-    width: 25%;
 }
 
 .container-restauration ul p {
     text-align: center;
 }
 
+.container-restauration h3 {
+    text-align: center;
+}
+
 /*
     Code mettant en style les ardoises.
 */
+.carte {
+    display: grid;
+    grid-template-areas: "first first first" "second third fourth" "fifth fifth fifth";
+    justify-content: space-around;
+    height: 100%;
+    grid-area: carte;
+    align-content: center;
+    grid-gap: 10px;
+}
+
 .carte1 {
     background-image: url(../img/surface-ardoise.jpg);
     box-shadow: 10px 5px 5px rgb(114, 111, 111);
-    grid-area: carte;
-    align-self: start;
-    justify-self: start;
+    grid-area: first;
+    padding: 10px;
 }
 
 .carte2 {
     background-image: url(../img/surface-ardoise.jpg);
     box-shadow: 10px 5px 5px rgb(114, 111, 111);
-    grid-area: carte;
-    align-self: start;
-    justify-self: center;
+    grid-area: second;
+    padding: 10px;
 }
 
 .carte3 {
     background-image: url(../img/surface-ardoise.jpg);
     box-shadow: 10px 5px 5px rgb(114, 111, 111);
-    grid-area: carte;
-    align-self: start;
-    justify-self: end;
+    grid-area: third;
+    padding: 10px;
+}
+
+.carte4 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: fourth;
+    padding: 10px;
+}
+
+.carte5 {
+    background-image: url(../img/surface-ardoise.jpg);
+    box-shadow: 10px 5px 5px rgb(114, 111, 111);
+    grid-area: fifth;
+    padding: 10px;
 }
 
 .titre_menu {
     font-weight: bold;
     font-size: large;
     color: antiquewhite;
-}
-
-.menu-general {
-    margin-top: 5%;
-    margin-left: 2%;
-    width: 98%;
-    height: 59%;
-    background-image: url(../img/surface-ardoise.jpg);
-    box-shadow: 10px 5px 5px rgb(114, 111, 111);
-    grid-area: carte1;
-    align-self: start;
-    justify-self: center;
-    display: flex;
-    flex-direction: row;
 }
 
 .container-restauration h2 {
@@ -164,92 +161,24 @@ td:not([align]), th:not([align]) {
 }
 
 /*
-    Code mettant en style le contenu de la dernière ardoise.
+    ------------------ SECTION ANNIVERSAIRE -----------------
 */
-.grande_carte {
-    display: inline-flex;
-}
-
-.petite_carte {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 900px) {
     .container-restauration {
         grid-template: auto auto auto / 100%;
+        grid-template-areas: "titre2" "carte" "carte" "carte" "carte";
+
     }
 
-    .cote1 {
+    .sideimg {
         display: none;
     }
 
-    .cote2 {
-        display: none;
-    }
-
-    .cote3 {
-        display: none;
-    }
-
-    .cote4 {
-        display: none;
-    }
-
-    .presentation-restauration {
-        font-family: 'Indie Flower', cursive;
-        font-weight: lighter;
-        grid-area: responsive-title;
-        align-self: center;
-        justify-self: center;
-    }
-
-    .container-restauration ul {
-        list-style: none;
-        font-family: "Heina's hurry", serif;
-        color: aliceblue;
-        margin-left: 2%;
-        padding: 2%;
-        width: 95%;
-    }
-
-    .carte1 {
-        background-image: url(../img/surface-ardoise.jpg);
-        box-shadow: 10px 5px 5px rgb(114, 111, 111);
-        grid-area: image1;
-        align-self: start;
-        justify-self: center;
-    }
-
-    .carte2 {
-        background-image: url(../img/surface-ardoise.jpg);
-        box-shadow: 10px 5px 5px rgb(114, 111, 111);
-        grid-area: image2;
-        align-self: start;
-        justify-self: center;
-    }
-
-    .carte3 {
-        background-image: url(../img/surface-ardoise.jpg);
-        box-shadow: 10px 5px 5px rgb(114, 111, 111);
-        grid-area: image3;
-        align-self: start;
-        justify-self: center;
-    }
-
-    .menu-general {
-        margin-top: 5%;
-        margin-left: 2%;
-        width: 98%;
-        height: auto;
-        background-image: url(../img/surface-ardoise.jpg);
-        box-shadow: 10px 5px 5px rgb(114, 111, 111);
-        grid-area: image4;
-        align-self: start;
-        justify-self: center;
-        display: flex;
-        flex-direction: row;
+    .carte {
+        display: grid;
+        grid-template-areas: "first" "second" "third" "fourth" "fifth";
     }
 }

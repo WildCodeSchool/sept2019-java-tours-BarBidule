@@ -1,4 +1,4 @@
-package com.barbidule.barbidule.entity;
+package com.barbidule.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +15,17 @@ public class FormuleDuJour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String titreMenu;
     private String titre;
     private String description;
     private String prix;
 
 
+    // Constructeur vide
     public FormuleDuJour() {
     }
+
+    // Getters et Setters
 
     public int getId() {
         return id;
@@ -29,6 +33,14 @@ public class FormuleDuJour {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitreMenu() {
+        return titreMenu;
+    }
+
+    public void setTitreMenu(String titreMenu) {
+        this.titreMenu = titreMenu;
     }
 
     public String getTitre() {
