@@ -9,25 +9,12 @@
           type="text/css"/>
 </head>
 <body>
-<h1>Bonjour, vous pouvez ici éditer votre intervenant</h1>
+<h1>Bonjour, vous pouvez ici créer un nouvel intervenant</h1>
 <section>
-    <ul>
-        <li>
-            <h3 class="titre_menu" th:text="${intervenant.name}"/>
-            <p th:text="${intervenant.atelier1}"/>
-            <p th:text="${intervenant.description1}"/>
-            <p th:text="${intervenant.atelier2}"/>
-            <p th:text="${intervenant.description2}"/>
-            <p th:text="${intervenant.atelier3}"/>
-            <p th:text="${intervenant.description3}"/>
-            <p th:text="${intervenant.prix1}"/>
-            <p th:text="${intervenant.prix2}"/>
-        </li>
-    </ul>
 
-    <form method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
-        <label for="name">Nom de l'intervenant : </label><br>
-        <input id="name" th:field=*{name} type="text"><br>
+    <form method="post" th:action="@{/admin/intervenant/create}" th:object="${intervenant}">
+        <label for="name">Nom de l'intervenant : </label>
+        <input id="name" th:field=*{name} type="text">
         <label for="atelier1">Titre de l'atelier 1 : </label><br>
         <input id="atelier1" th:field=*{atelier1} type="text"><br>
         <label for="description1">Description numero 1: </label><br>
@@ -44,11 +31,10 @@
         <input id="prix1" th:field=*{prix1} type="text"><br>
         <label for="prix2">prix numero 2: </label><br>
         <input id="prix2" th:field=*{prix2} type="text"><br>
-        <input th:field="*{id}" type="hidden">
-        <input type="submit" value="Modifier">
+        <input type="submit" value="Sauver">
     </form>
 </section>
 <br>
-<a class="bouton" th:href="@{/admin/intervenants}">Retour</a>
+<a class="bouton" th:href="@{/admin/intervenants}">Annuler</a>
 </body>
 </html>

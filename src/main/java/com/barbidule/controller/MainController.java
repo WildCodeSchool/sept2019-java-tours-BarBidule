@@ -55,13 +55,9 @@ public class MainController {
         // Envoi de la liste des intervenants
         List<Intervenant> intervenants = intervenantRepository.findAll();
 
-        // Gestion de l'exception
-        if (intervenants.size() > 0 && formulesDuJour.size() > 0) {
-            model.addAttribute("intervenants", intervenants);
-            model.addAttribute("formulesDuJour", formulesDuJour);
-            return "bar_bidule";
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'intervenant ou le menu n'existe pas");
+        model.addAttribute("intervenants", intervenants);
+        model.addAttribute("formulesDuJour", formulesDuJour);
+        return "bar_bidule";
     }
 
 }

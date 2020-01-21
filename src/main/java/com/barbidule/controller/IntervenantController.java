@@ -26,14 +26,11 @@ public class IntervenantController {
     private IntervenantRepository intervenantRepository;
 
     // Controller admin qui affiche la liste des intervenants.
-    @GetMapping(value = "/admin/intervenant")
-    public String displayAll(Model model) {
+    @GetMapping(value = "/admin/intervenants")
+    public String getAll(Model model) {
         List<Intervenant> intervenants = intervenantRepository.findAll();
-        if (intervenants.size() > 0) {
-            model.addAttribute("intervenants", intervenants);
-            return "intervenant_list";
-        }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'intervenant n'existe pas");
+        model.addAttribute("intervenants", intervenants);
+        return "intervenant_list";
     }
 
     // Controller qui affiche l'intervenant à éditer.
@@ -59,7 +56,7 @@ public class IntervenantController {
     }
 
     // Controller qui affiche l'intervenant à créer.
-    @GetMapping(value = "/admin/intervenant/save")
+    @GetMapping(value = "/admin/intervenant/create")
     public String save(Model model) {
         Intervenant intervenant = new Intervenant();
         model.addAttribute("intervenant", intervenant);
@@ -67,14 +64,14 @@ public class IntervenantController {
     }
 
     // Controller qui permet l'enrefistrement de l'intervenant.
-    @PostMapping("/admin/intervenant")
+    @PostMapping("/admin/intervenant/create")
     public String SaveIntervenant(@Valid Intervenant intervenant, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "intervenant_form";
         }
         // Sauvegarde en base de donnée de l'intervenant.
         intervenantRepository.save(intervenant);
-        return "redirect:/admin/intervenant/" + intervenant.getId();
+        return "redirect:/admin/intervenants";
     }
 
 }
