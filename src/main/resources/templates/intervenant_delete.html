@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1 th:text="|Etes-vous sûre de vouloir supprimer ${intervenant.name}?|" />
+    <form method="post" th:action="@{/admin/intervenant/delete}" th:object="${intervenant}">
+        <input type="hidden" th:field="*{id}" />
+        <input class="bouton" type="submit" value="Supprimer">
+    </form>
+<br>
+<a class="bouton" th:href="@{/admin/intervenants}">Annuler</a>
+</body>
+</html>

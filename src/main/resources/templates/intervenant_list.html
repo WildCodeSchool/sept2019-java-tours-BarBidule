@@ -11,9 +11,9 @@
 <body>
 <h1>Bonjour, choisissez l'intervenant à éditer</h1>
 <br>
-<section>
+<section class="carte" >
     <ul>
-        <li th:each="intervenant : ${intervenants}" >
+        <li class="intervenant" th:each="intervenant : ${intervenants}">
             <h3 th:text="${intervenant.name}"/>
             <p th:text="${intervenant.atelier1}"/>
             <p th:text="${intervenant.description1}"/>
@@ -24,12 +24,11 @@
             <p th:text="${intervenant.prix1}"/>
             <p th:text="${intervenant.prix2}"/>
             <a class="bouton" th:href="@{/admin/intervenant/{id} (id=${intervenant.id})}">Modifier cet intervenant</a>
-            <a class="bouton" th:href="@{/admin/intervenant/delete(id=${intervenant.id})}">Supprimer cet intervenant</a>
-
+            <a class="bouton" th:href="@{/admin/intervenant/delete/{id} (id=${intervenant.id})}">Supprimer cet
+                intervenant</a>
         </li>
-        <a class="bouton" th:href="@{/admin/intervenants}">Créer un nouvel intervenant</a>
-
     </ul>
+    <a class="bouton" th:href="@{/admin/intervenant/create}">Créer un nouvel intervenant</a>
 </section>
 <br>
 <a class="bouton" th:href="@{/admin}">Retour à la page d'administration</a>

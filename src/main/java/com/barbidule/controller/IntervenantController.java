@@ -76,11 +76,21 @@ public class IntervenantController {
     }
 
 
-    // Controller qui permet la suppression de l'intervenant.
-    @GetMapping("/admin/intervenant/delete")
-    public String deleteIntervenant(@RequestParam int id) {
-        intervenantRepository.deleteById(id);
-        return "redirect:/admin/intervenants";
+    // Controllers qui permettent la suppression de l'intervenant.
+    @GetMapping("/admin/intervenant/delete/{id}")
+    public String delete(@PathVariable int id, Model model) {
+        Optional<Intervenant> intervenant = intervenantRepository.findById(id);
+        if (intervenant.isPresent()) {
+            model.addAttribute("intervenant", intervenant.get());
+            return "intervenant_delete";
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'intervenant n'existe pas");
     }
 
+    @PostMapping("/admin/intervenant/delete")
+    public String deleteIntervenant(Intervenant intervenant) {
+
+        intervenantRepository.delete(intervenant);
+        return "redirect:/admin/intervenants";
+    }
 }

@@ -10,10 +10,10 @@
 </head>
 <body>
 <h1>Bonjour, vous pouvez ici éditer votre intervenant</h1>
-<section>
+<section class="carte">
     <ul>
-        <li>
-            <h3 class="titre_menu" th:text="${intervenant.name}"/>
+        <li class="intervenant">
+            <h3 th:text="${intervenant.name}"/>
             <p th:text="${intervenant.atelier1}"/>
             <p th:text="${intervenant.description1}"/>
             <p th:text="${intervenant.atelier2}"/>
@@ -25,7 +25,7 @@
         </li>
     </ul>
 
-    <form method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
+    <form class="intervenant" method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
         <label for="name">Nom de l'intervenant : </label><br>
         <input id="name" th:field=*{name} type="text"><br>
         <label for="atelier1">Titre de l'atelier 1 : </label><br>
