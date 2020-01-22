@@ -134,10 +134,19 @@
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                Quae perspiciatis ratione id nihil molestias aliquam? Dicta excepturi culpa fuga ullam voluptatum
-                nulla aliquid vel dolor sit! Corrupti, quod autem! Tempora.
-            </p>
+            <ul class="carte">
+                <li class="intervenant" th:each="intervenant : ${intervenants}">
+                    <h3 th:text="${intervenant.name}"/>
+                    <p th:text="${intervenant.atelier1}"/>
+                    <p th:text="${intervenant.description1}"/>
+                    <p th:text="${intervenant.atelier2}"/>
+                    <p th:text="${intervenant.description2}"/>
+                    <p th:text="${intervenant.atelier3}"/>
+                    <p th:text="${intervenant.description3}"/>
+                    <p th:text="${intervenant.prix1}"/>
+                    <p th:text="${intervenant.prix2}"/>
+                </li>
+            </ul>
         </div>
     </div>
     <br>
@@ -210,7 +219,8 @@
                     50€ la mise à disposition du local <br>
                     Réservé aux adhérents
                 </p><br>
-                <p>vous pouvez télécharger un carton d'invitation <a th:href="@{/documents/carton_invitation.pdf}">ici</a></p>
+                <p>vous pouvez télécharger un carton d'invitation <a
+                        th:href="@{/documents/carton_invitation.pdf}">ici</a></p>
             </section>
         </div>
     </div>

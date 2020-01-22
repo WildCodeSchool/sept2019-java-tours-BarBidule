@@ -62,9 +62,37 @@ label {
     Section qui s'occupe de la partie fiche intervenant
 */
 
-.intervenant{
+.intervenant {
     border-style: double;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 0 3rem;
     text-align: center;
+    width: 48%;
+    height: 50%;
+    margin: 1%;
+}
+
+.intervenant a {
+    font-size: small;
+}
+
+@media screen and (max-width: 900px) {
+    .intervenant {
+        border-style: double;
+        padding: 1.2rem;
+        border-radius: 0 3rem;
+        text-align: center;
+        width: 98%;
+        height: 50%;
+        margin: 1%;
+        font-size: 3rem;
+    }
+
+    .intervenant p {
+        font-size: 2rem;
+    }
+
+    .intervenant a {
+        font-size: 2rem;
+    }
 }

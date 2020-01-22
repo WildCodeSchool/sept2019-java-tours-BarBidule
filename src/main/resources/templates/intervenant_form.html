@@ -12,9 +12,9 @@
 <h1>Bonjour, vous pouvez ici créer un nouvel intervenant</h1>
 <section>
 
-    <form method="post" th:action="@{/admin/intervenant/create}" th:object="${intervenant}">
-        <label for="name">Nom de l'intervenant : </label>
-        <input id="name" th:field=*{name} type="text">
+    <form class="intervenant" method="post" th:action="@{/admin/intervenant/create}" th:object="${intervenant}">
+        <label for="name">Nom de l'intervenant : </label><br>
+        <input id="name" th:field=*{name} type="text"><br>
         <label for="atelier1">Titre de l'atelier 1 : </label><br>
         <input id="atelier1" th:field=*{atelier1} type="text"><br>
         <label for="description1">Description numero 1: </label><br>
