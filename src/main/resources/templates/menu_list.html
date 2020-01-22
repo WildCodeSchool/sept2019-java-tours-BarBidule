@@ -22,11 +22,11 @@
             <br>
             <p th:text="${formuleDuJour.prix}"/>
             <br>
-            <a class="bouton_modifier" th:href="@{/admin/menu/{id} (id=${formuleDuJour.id})}">Modifier ce menu</a>
+            <a th:href="@{/admin/menu/{id} (id=${formuleDuJour.id})}">Modifier ce menu</a>
         </li>
     </ul>
 </section>
 <br>
-<a class="bouton_modifier" th:href="@{/admin}">Retour à la page d'administration</a>
+<a class="bouton" th:href="@{/admin}">Retour à la page d'administration</a>
 </body>
 </html>

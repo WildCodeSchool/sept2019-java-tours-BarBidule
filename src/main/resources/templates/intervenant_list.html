@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1>Bonjour, choisissez l'intervenant à éditer</h1>
+<br>
+<section class="carte" >
+    <ul>
+        <li class="intervenant" th:each="intervenant : ${intervenants}">
+            <h3 th:text="${intervenant.name}"/>
+            <p th:text="${intervenant.atelier1}"/>
+            <p th:text="${intervenant.description1}"/>
+            <p th:text="${intervenant.atelier2}"/>
+            <p th:text="${intervenant.description2}"/>
+            <p th:text="${intervenant.atelier3}"/>
+            <p th:text="${intervenant.description3}"/>
+            <p th:text="${intervenant.prix1}"/>
+            <p th:text="${intervenant.prix2}"/>
+            <a class="bouton" th:href="@{/admin/intervenant/{id} (id=${intervenant.id})}">Modifier cet intervenant</a>
+            <a class="bouton" th:href="@{/admin/intervenant/delete/{id} (id=${intervenant.id})}">Supprimer cet
+                intervenant</a>
+        </li>
+    </ul>
+    <a class="bouton" th:href="@{/admin/intervenant/create}">Créer un nouvel intervenant</a>
+</section>
+<br>
+<a class="bouton" th:href="@{/admin}">Retour à la page d'administration</a>
+</body>
+</html>

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap'); /*Reset CSS*/
-
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+/*Reset CSS*/
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0
@@ -79,7 +80,8 @@ h2 {
     margin-left: 2%;
     margin-right: 2%;
 }
-.leBarBidule>p{
+
+.leBarBidule > p {
     text-align: center;
 }
 
@@ -134,12 +136,21 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 .boutonAfficher {
     box-sizing: border-box;
     float: right;
-    display: block;
-    padding: auto;
-    border: 2px solid;
-    transform: scale(var(--ggs,1));
-    border-radius: 4px
+    font-family: 'Patrick Hand SC', cursive;
+    align-self: center;
+    background: transparent;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    transition: all .5s ease;
+    color: #41403E;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transform: scale(var(--ggs, 1));
 }
+
 .boutonAfficher::after,
 .boutonAfficher::before {
     content: "";
@@ -153,6 +164,7 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     top: 8px;
     left: 4px
 }
+
 .boutonAfficher::after {
     width: 2px;
     height: 10px;
@@ -166,12 +178,21 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 .boutonMasquer {
     box-sizing: border-box;
     float: right;
-    display: block;
-    padding: auto;
-    border: 2px solid;
-    transform: scale(var(--ggs,1));
-    border-radius: 4px
+    font-family: 'Patrick Hand SC', cursive;
+    align-self: center;
+    background: transparent;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    transition: all .5s ease;
+    color: #41403E;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    transform: scale(var(--ggs, 1));
 }
+
 .boutonMasquer::after,
 .boutonMasquer::before {
     content: "";
@@ -185,11 +206,40 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     top: 8px;
     left: 4px
 }
+
 .boutonMasquer::after {
     width: 2px;
     height: 10px;
     top: 4px;
-    left: 8px
+    left: 8px;
+}
+
+/***
+ Zone de code qui gère le bouton avec un design "fait main".
+ ***/
+.bouton {
+    font-family: 'Patrick Hand SC', cursive;
+    align-self: center;
+    background: transparent;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    transition: all .5s ease;
+    color: #41403E;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.bouton:hover {
+    box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
+}
+
+#admin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /***

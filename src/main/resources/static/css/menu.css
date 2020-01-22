@@ -58,15 +58,13 @@ label {
     color: bisque;
 }
 
-.bouton_modifier {
-    text-align: center;
-    vertical-align: middle;
-    color: white;
-    text-decoration: none;
-    border-radius: 15%;
-    padding: 1%;
-}
+/*
+    Section qui s'occupe de la partie fiche intervenant
+*/
 
-.bouton_modifier:hover {
-    color: grey;
+.intervenant{
+    border-style: double;
+    padding: 1rem;
+    border-radius: 0 3rem;
+    text-align: center;
 }

@@ -54,7 +54,6 @@ td:not([align]), th:not([align]) {
     text-align: left
 }
 
-
 .container-restauration {
     width: 100%;
     display: grid;
@@ -160,10 +159,10 @@ td:not([align]), th:not([align]) {
     text-align: left;
 }
 
+
 /*
     ------------------ SECTION ANNIVERSAIRE -----------------
 */
-
 
 
 @media screen and (max-width: 900px) {
