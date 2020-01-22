@@ -5,6 +5,7 @@ header{
     display: inline-flex;
     font-family: 'Indie Flower', cursive;
     position: fixed;
+    z-index: 6;
 }
 .logo img{
     width: 100px;
@@ -31,7 +32,6 @@ nav label{
     padding: 10px 0px;
     text-align: center;
     background-color: gold;
-    opacity: 80%;
 }
 nav ul{
     display: none;
