@@ -2,28 +2,28 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Le Bar Bidule</title>
-    <link rel="stylesheet" type="text/css" media="all" 
-          href="../static/css/header.css" data-th-href="@{/css/header.css}" />
-    <link rel="stylesheet" type="text/css" media="all" 
-          href="../static/css/defaut_text.css" data-th-href="@{/css/defaut_text.css}" />
+    <link data-th-href="@{/css/header.css}" href="../static/css/header.css" media="all"
+          rel="stylesheet" type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all"
+          rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <header th:fragment="header">
-        <!--logo-->
-        <div class="logo">
-            <a href="/index" th:href="@{/}">
-                <img th:src="@{/img/logo_titre.png}" alt="logo bar bidule">
-                <img th:src="@{/img/mais_pas_que.png}" alt="logo mais pas que">
-            </a>
-        </div>
-        <!--Menu déroulant-->
-        <nav>
-            <div class="conteneur-nav">
+<header th:fragment="header">
+    <!--logo-->
+    <div class="logo">
+        <a href="/index" th:href="@{/}">
+            <img alt="logo bar bidule" th:src="@{/img/logo_titre.png}">
+            <img alt="logo mais pas que" th:src="@{/img/mais_pas_que.png}">
+        </a>
+    </div>
+    <!--Menu déroulant-->
+    <nav>
+        <div class="conteneur-nav">
             <label for="mobile">Afficher le menu</label>
-            <input type="checkbox" id="mobile" role="button">
+            <input id="mobile" role="button" type="checkbox">
             <ul>
                 <li class="deroulant"><a th:href="@{/leBarBidule}">Le Bar Bidule &ensp;</a>
                     <ul class="sous">
@@ -33,20 +33,20 @@
                         <li><a href="/leBarBidule/#spectacle">les spectacles et concerts</a></li>
                         <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
                     </ul>
-                </li>    
-                <li class="deroulant"><a href="#">Un Café des Enfants &ensp;</a>
+                </li>
+                <li class="deroulant"><a th:href="@{/cafe}">Un Café des Enfants &ensp;</a>
                     <ul class="sous">
-                        <li><a href="#">C'est quoi un Café des Enfants ?</a></li>
-                        <li><a href="#">L'histoire du Bar Bidule</a></li>
-                        <li><a href="#">Les adhérents</a></li>
+                        <li><a href="/cafe/#cafe">C'est quoi un Café des Enfants ?</a></li>
+                        <li><a href="/cafe/#histoire">L'histoire du Bar Bidule</a></li>
+                        <li><a href="/cafe/#adherents">Les adhérents</a></li>
                     </ul>
-                </li>   
-                <li class="deroulant"><a href="#">Mais pas que... &ensp;</a>
+                </li>
+                <li class="deroulant"><a th:href="@{/mais}">Mais pas que... &ensp;</a>
                     <ul class="sous">
-                        <li><a href="#">Le Bar Bidule hors les murs</a></li>
-                        <li><a href="#">Les copains du Bar Bidule</a></li>
-                        <li><a href="#">Mise à disposition <br/>mutualisation du local</a></li>
-                        <li><a href="#">L'action sociale et médico-sociale</a></li>
+                        <li><a href="/mais/#murs">Le Bar Bidule hors les murs</a></li>
+                        <li><a href="/mais/#copains">Les copains du Bar Bidule</a></li>
+                        <li><a href="/mais/#local">Mise à disposition <br/>mutualisation du local</a></li>
+                        <li><a href="/mais/#social">L'action sociale et médico-sociale</a></li>
                     </ul>
                 </li>
                 <li class="deroulant"><a href="#">Contactez-nous &ensp;</a>
@@ -58,24 +58,29 @@
                     </ul>
                 </li>
             </ul>
-            </div>
-        </nav>
-    </header><br>
+        </div>
+    </nav>
+</header>
+<br>
 
-    <div class="leBarBidule">
+<div class="leBarBidule">
 
     <h1>Bienvenue au Bar Bidule</h1><br>
 
-    <p>Vous trouverez ici tout ce qu'il faut pour comprendre qui nous sommes</p><br>
-
+    <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
+    <!--Donner la possibilité de modifier les horaires-->
     <h2>Voici notre programation d'évènements pour le mois</h2><br>
-    <p>Affichez la <a href="../static/documents/prog_A3.jpg" th:href="@{/documents/prog_A3.jpg}">ici</a></p>
+    <p>Affichez la <a href="../static/documents/prog_A3.jpg" th:href="@{/documents/prog_A3.jpg}">ici</a>
+    </p>
+    <p>Ou téléchargez la <a download="../static/documents/prog_A3.jpg" href="../static/documents/PROG_BBD_JANV_2020.pdf"
+                            th:href="@{/documents/prog_A3.jpg}">ici</a></p>
+    <p>Actu : un specatcle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
+        <a href="https://www.facebook.com/events/494146774544780/">Contes de Saint-Valentin 3/10 ans</a>
+    </p>
+</div>
 
-    <p>Ou téléchargez la <a href="../static/documents/prog_A3.jpg" th:href="@{/documents/prog_A3.jpg}" download="../static/documents/prog_A3.jpg">ici</a></p>
-    </div>
-
-    <footer>
-        <a class="bouton" href="/admin">ADMIN</a>
-    </footer>
+<footer>
+    <a class="bouton" href="/admin">ADMIN</a>
+</footer>
 </body>
 </html>

@@ -57,7 +57,7 @@ td:not([align]), th:not([align]) {
 .container-restauration {
     width: 100%;
     display: grid;
-    grid-template: 20% 20% 20% 20% 20%/ 25% 75%;
+    grid-template: 20% 20% 20% 20% 20%/ 15% 85%;
     grid-template-areas: "sideimg titre2" "sideimg carte" "sideimg carte" "sideimg carte" "sideimg carte";
     grid-gap: 10px;
 }
