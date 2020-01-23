@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link data-th-href="@{/css/restauration.css}" href="../static/css/restauration.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/header.css}" href="../static/css/header.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/js/main.js}" href="../static/js/main.js" media="all" rel="stylesheet" type="text/css"/>
+    <title>Bar Bidule</title>
+</head>
+
+<body>
+<!-- import du menu/header-->
+<header th:replace="index :: header"/>
+<br>
+<!-- import logo du Titre-->
+
+<!-- Section page-->
+<div class="maisPasQue">
+
+    <!-- Zone Jeu et hors les mur-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/lectures_partages.jpg" th:src="@{/img/lectures_partages.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="mur">Le Bar Bidule hors les murs</h1>
+            <p>Le Bar Bidule, c'est aussi un café des enfants itinérant !</p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>Tout au long de l'année et essentiellement pendant la période estivale, tu peux retrouver ton café
+                préféré
+                aux 4 coins de la ville!
+            </p><br>
+            <p>Et oui, à l'occasion d'événements musicaux, culturels ou encore gastronomiques, on ferme la boutique, on
+                charge la voiture de tout notre bazar et on installe un espace bar et jeux parents/enfants sur
+                différents
+                sites.</p><br>
+            <p>Généralement, tu nous retrouveras :</p>
+            <ul>
+                <li>au festival des îlots électroniques</li>
+                <li>à la biennale de la Rabouilleuse : la Petite Mussette</li>
+                <li> au marché des Convergences bio sur les bords de Loire</li>
+                <li>avec le collectif Velpeau en transition</li>
+                <li>à la ressourcerie La Charpentière à La Riche</li>
+                <li>et chez tout un tas d'autres copains !</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <!-- Zone copains du Bar Bidule-->
+    <div class="titre_section">
+        <img alt-title="exemple d'assiette" class="img_titre_section" src="../static/img/titre_resto.jpg"
+             th:src="@{/img/titre_resto.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="copains">Les copains du Bar Bidule</h1>
+            <br>
+            <p>Le Bar Bidule c'est aussi des copains, des partenaires et un maillon d'une chaîne associative !</p>
+        </div>
+    </div>
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <br>
+            <p>Ressourcerie La Charpentière https://www.ressourcerie-lacharpentiere.fr/</p>
+            <p> la Compagnie des Passe Rêves http://lespassereves.fr/
+            </p>
+            <p> l'Instrumentarium Ambulant https://www.l-instrumentarium-ambulant.com/
+            </p>
+            <p> Librairie Libr'enfant www.librenfant.fr
+            </p>
+            <p> Roulement à Bill : atelier cyclo-militant d'auto-réparation de vélos http://www.roulementabill.org/
+            </p>
+            <p>Ecole de Loire la Rabouilleuse https://www.larabouilleuse-ecoledeloire.com/</p>
+            <p> Collectif Velpeau en Transition : Collectif d’habitants et d’associations oeuvrant pour la transition
+                écologique et citoyenne dans le quartier Velpeau à Tours, par des actions concrètes favorables (pas de
+                site : lien du Facebook)</p>
+            <p> Chorale Blouses Notes https://www.blousesnotes.fr/
+            </p>
+            <p> Chorale Lume (pas de site : lien du Facebook)
+            </p>
+            <p> Festival les Kampagn'arts http://www.kampagnarts.fr
+            </p>
+            <p> Festival les Ilôts Electroniques (pas de site : lien du Facebook)
+            </p>
+            <p>Festival Autrement Dit (Facebook)</p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- Action sociale et Médico-Sociale-->
+    <div class="titre_section">
+        <img alt-title="#" class="img_titre_section"
+             src="../static/img/couture.jpg" th:src="@{/img/couture.jpg}"/>
+        <div class="sous_titre_section">
+            <h1 id="social">L'Action sociale et Médico-Sociale</h1>
+            <p>Le Bar Bidule, c'est d'abord un lieu d'accueil inconditionnel ! Aussi, il lui tient à cœur d'accueillir
+                les
+                familles, parents et enfants en situation de handicap pour qui il est parfois délicat de pousser la
+                porte d'un
+                café. Le Bar Bidule mettra tout en œuvre pour y faciliter votre venue, n'hésitez pas à nous
+                contacter.</p>
+        </div>
+    </div>
+    <!-- Code permettant de cacher le contenu-->
+    <br>
+    <div class="spoiler" data-isOuvert="false">
+        <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
+               value="En savoir plus"/>
+        <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
+               value="Masquer"/>
+        <div class="contenuSpoiler">
+            <p>Par ailleurs, le Bar Bidule entretient d'étroits partenariats avec différents acteurs du secteur social
+                et médico-social du territoire, tels que :</p>
+            <ul>
+                <li>un institut thérapeutique éducatif et pédagogique (ITEP),</li>
+                <li>un centre parental</li>
+                <li>des services de la protection de l'enfance</li>
+                <li>un service de la protection judiciaire de la jeunesse (PJJ)</li>
+            </ul>
+            <br><br>
+            <p>Dans ce cadre, les missions conjointement menées sont plus ou moins formalisées selon les besoins de la
+                structure partenaire. Ainsi, le Bar Bidule peut se transformer en lieu de médiation familiale,
+                d'entretien
+                éducatif, d'exercice de mesure de réparation, de socialisation, d'animation de projet socio-éducatif,
+                etc.
+            </p>
+            <br><br>
+            <p>Si le Bar Bidule vous semble pouvoir être un lieu ressource dans l'exercice de vos missions socio-
+                éducatives, n'hésitez pas à nous contacter !</p>
+
+        </div>
+    </div>
+</div>
+<!-- import footer-->
+
+</body>
+</html>

@@ -59,5 +59,14 @@ public class MainController {
         model.addAttribute("formulesDuJour", formulesDuJour);
         return "bar_bidule";
     }
+    @GetMapping(value = "/cafe")
+    public String secondMenu() {
+        return "un_cafe_des_enfants";
+    }
+
+    @GetMapping(value = "/mais")
+    public String thirdMenu() {
+        return "mais_pas_que";
+    }
 
 }
