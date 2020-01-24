@@ -59,14 +59,23 @@ public class MainController {
         model.addAttribute("formulesDuJour", formulesDuJour);
         return "bar_bidule";
     }
+
+    // Controller du deuxième onglet du menu.
     @GetMapping(value = "/cafe")
     public String secondMenu() {
         return "un_cafe_des_enfants";
     }
 
+    // Controller du troisième onglet du menu.
     @GetMapping(value = "/mais")
     public String thirdMenu() {
         return "mais_pas_que";
+    }
+
+    // Controller du quatrième onglet du menu.
+    @GetMapping(value = "/contact")
+    public String MenuContact() {
+        return "contact";
     }
 
 }

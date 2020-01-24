@@ -48,7 +48,7 @@
                         <li><a href="/mais/#social">L'action sociale et médico-sociale</a></li>
                     </ul>
                 </li>
-                <li class="deroulant"><a href="#">Contactez-nous &ensp;</a>
+                <li class="deroulant"><a th:href="@{/contact}">Contactez-nous &ensp;</a>
                     <ul class="sous">
                         <li><a href="#">Formulaire de contact</a></li>
                         <li><a href="#">Plan d'acces</a></li>
@@ -65,7 +65,7 @@
 <div class="leBarBidule">
     <h1>Bienvenue au Bar Bidule</h1><br>
     <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
-    <!--Donner la possibilité de modifier les horaires-->
+    <!--TODO penser à rendre la modif des horaires possible-->
     <h2>Voici notre programation d'évènements pour le mois</h2><br>
     <p>Affichez la <a href="../static/documents/PROG_BBD_JANV_2020.pdf" th:href="@{/documents/PROG_BBD_JANV_2020.pdf}">ici</a>
     </p>
@@ -76,7 +76,6 @@
     </p>
 </div>
 <footer>
-    <a class="bouton" href="/admin">ADMIN</a>
 </footer>
 </body>
 </html>

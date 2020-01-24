@@ -6,6 +6,7 @@ header{
     font-family: 'Indie Flower', cursive;
     position: fixed;
     z-index: 6;
+
 }
 .logo img{
     width: 100px;
@@ -85,6 +86,7 @@ nav a{
         justify-content: space-around;
         align-items: center;
         position: relative;
+        background-image: url("../static/img/barbidule.jpg");
     }
     nav{
         width: 80%;
