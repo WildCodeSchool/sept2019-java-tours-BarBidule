@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Le Bar Bidule</title>
+    <link data-th-href="@{/css/header.css}" href="../static/css/header.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/contact.css}" href="../static/css/contact.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- import du menu/header-->
+<header th:replace="index :: header"/>
+<br>
+<h2>Nous contacter :</h2>
+<!-- formulaire de contact-->
+<form class="flex-form">
+    <input placeholder="&#128100;" type="text">
+    <input placeholder="@" type="email">
+    <input pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" placeholder="tél: 06 25 66 18 00" type="tel">
+    <textarea placeholder="Taper votre message ici"></textarea>
+    <input class="button" type="submit" value="ENVOYER"/>
+</form>
+
+<h2>Où sommes nous?</h2>
+<ul class="par-cent">
+    <li>64 Rue d'Entraigues</li>
+    <li>37000 Tours</li>
+    <li>France</li>
+    <li>+33 (0)6 58 05 11 41</li>
+</ul>
+<section class="infos">
+    <p>Il y a un parking à vélos juste en face du Bar Bidule.</p>
+    <p>La première visite est libre puis il est nécessaire d'adhérer à l'association.</p>
+    <p>Vous pouvez nous suivre sur Facebook et Instagram.</p>
+    <!--TODO penser à rendre la modif des horaires possible-->
+    <p>Horaires d'ouverture : mercredi de 10h à 18h, samedi et dimanche de 15h à 18h pendant l'année scolaire (horaires
+        modifiables pendant les vacances scolaires) </p>
+</section>
+
+<div class="ifra">
+    <iframe allowfullscreen=""
+            frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.25720399675!2d0.6830590155000821!3d47.387414279170706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47fcd5c80e56aaab%3A0xe733264c9910e5b7!2sBar%20bidule!5e0!3m2!1sfr!2sfr!4v1579797059275!5m2!1sfr!2sfr" style="border:0;" width="600"></iframe>
+</div>
+<hr/>
+<footer>
+</footer>
+</body>
+</html>
