@@ -336,4 +336,31 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     .leBarBidule {
         margin-top: 0;
     }
+/***
+Zone de code qui gère le grid de la page d'accueil.
+***/
+    .leBarBidule{
+        display: grid;
+        grid-template-areas: "presentation presentation" "horaire prog" "evenement evenement";
+        grid-gap: 10%;
+    }
+    .welcome{
+        grid-area: presentation;
+        width: 100%;
+    }
+    .horaire{
+        width: 100%;
+        grid-area: horaire;
+        border: solid darkgreen;
+    }
+    .prog{
+        width: 100%;
+        grid-area: prog;
+        border: solid darkgreen;
+    }
+    .actu{
+        width: 100%;
+        grid-area: evenement;
+        border: solid darkorange;
+    }
 }
