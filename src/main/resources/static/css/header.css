@@ -6,6 +6,7 @@ header{
     font-family: 'Indie Flower', cursive;
     position: fixed;
     z-index: 6;
+    background-color: #F17E2D;
 
 }
 .logo img{
@@ -15,15 +16,12 @@ header{
 nav{
     width: 70%;
     margin: 0 auto;
-    background-color: white;
 }
 .conteneur-nav{
     position: absolute;
     width: 100%;
 }
-nav{
-    background-color: transparent;
-}
+
 nav input[type=checkbox]{
     display: none;
 }
@@ -74,6 +72,9 @@ nav a{
     padding: 5px;
     font-size: 12px;
     background-color: RGBa(200,200,200,0.8);
+}
+footer{
+    background-color: #F17E2D;
 }
 
 @media screen and (min-width: 900px){
