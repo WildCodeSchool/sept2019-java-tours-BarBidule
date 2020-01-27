@@ -12,21 +12,57 @@
 <h1>Bonjour, choisissez l'intervenant à éditer</h1>
 <br>
 <ul class="carte">
-    <li class="intervenant" th:each="intervenant : ${intervenants}">
-        <h3 th:text="${intervenant.name}"/>
-        <p th:text="${intervenant.atelier1}"/>
-        <p th:text="${intervenant.description1}"/>
-        <p th:text="${intervenant.atelier2}"/>
-        <p th:text="${intervenant.description2}"/>
-        <p th:text="${intervenant.atelier3}"/>
-        <p th:text="${intervenant.description3}"/>
-        <p th:text="${intervenant.prix1}"/>
-        <p th:text="${intervenant.prix2}"/>
+    <li class="card" th:each="intervenant : ${intervenants}">
+        <a href="#">
+            <!-- Image de l'atelier -->
+            <div class="card-image"><img
+                    alt="Orange"
+                    src="https://damienflandrin.fr/storage/tutoriel-realiser-une-carte-en-css/card-image.jpg"/></div>
+            <!-- Fin de l'image de l'atelier -->
+            <!-- Corp de la carte -->
+            <div class="card-body">
+                <div class="card-name">
+                    <p th:text="${intervenant.name}"/>
+                </div>
+                <br>
+                <div class="card-title">
+                    <h3 class="card-title" th:text="${intervenant.atelier1}"/>
+                </div>
+                <br>
+                <br>
+                <div class="card-excerpt">
+                    <p class="card-exerpt" th:text="${intervenant.description1}"/>
+                </div>
+                <div class="card-title">
+                    <p th:text="${intervenant.atelier2}"/>
+                </div>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description2}"/>
+                </div>
+                <div class="card-title">
+                    <p th:text="${intervenant.atelier3}"/>
+                </div>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description3}"/>
+                </div>
+                <br>
+                <div class="card-name">
+                    <p class="card-name" th:text="${intervenant.prix1}"/>
+                    <p class="card-name" th:text="${intervenant.prix2}"/>
+                </div>
+            </div>
+            <!-- Fin du corp de la carte -->
+        </a>
+        <br>
+        <hr>
+        <div class="buttonBox">
         <a class="bouton" th:href="@{/admin/intervenant/{id} (id=${intervenant.id})}">Modifier cet intervenant</a>
         <a class="bouton" th:href="@{/admin/intervenant/delete/{id} (id=${intervenant.id})}">Supprimer cet
             intervenant</a>
+        </div>
     </li>
 </ul>
+<br>
 <a class="bouton" th:href="@{/admin/intervenant/create}">Créer un nouvel intervenant</a>
 <br>
 <a class="bouton" th:href="@{/admin}">Retour à la page d'administration</a>

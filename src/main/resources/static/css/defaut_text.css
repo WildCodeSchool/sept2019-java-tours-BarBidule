@@ -74,6 +74,25 @@ h2 {
     font-size: 1.5rem;
     text-align: center;
 }
+hr {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 40px 0 80px;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+}
+
+hr:after {
+    content: "\2601 \2729 \2601";
+    height: 0;
+    letter-spacing: 1em;
+    color: darkgreen;
+}
 
 .leBarBidule {
     margin-top: 17%;
@@ -241,6 +260,72 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     flex-direction: column;
     justify-content: center;
 }
+/***
+ Zone de code qui gère les cartes (intervenants).
+ ***/
+
+.card {
+    width: 400px; /*1*/
+    height: auto;
+    margin: 0px auto; /*2*/
+    background-color: white; /*3*/
+    box-shadow: 0px 5px 20px #999; /*4*/
+}
+.card a { /*5*/
+    color: #333;
+    text-decoration: none;
+}
+.card:hover .card-image img { /*6*/
+    width: 160%;
+    filter: grayscale(0);
+}
+.card-image {
+    height: 250px;/*1*/
+    position: relative;/*2*/
+    overflow: hidden;/*3*/
+}
+.card-image img {
+    width: 150%;/*4*/
+    /*5 - Méthode de centrage en fonction de la taille de l'image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(1);/*6*/
+    /*7 - Transition */
+    transition-property: filter width;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+.card-body {
+    text-align:center;  /*1*/
+    padding: 15px 20px; /*2*/
+    box-sizing: border-box; /*3*/
+}
+.card-name {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.card-title, .card-excerpt {
+    font-family: 'Playfair Display', serif;
+}
+
+.card-name, .card-title {
+    text-align:center;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.card-name, .card-excerpt {
+    color: #777;
+}
+.card .buttonBox{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: space-between;
+}
 
 /***
  Zone de code qui gère l'affichage lorsque la largeur de
@@ -250,5 +335,36 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 @media screen and (min-width: 640px) {
     .leBarBidule {
         margin-top: 0;
+    }
+/***
+Zone de code qui gère le grid de la page d'accueil.
+***/
+    .leBarBidule{
+        display: grid;
+        grid-template-areas: "presentation presentation" "horaire prog" "evenement evenement";
+        grid-gap: 10%;
+    }
+    .welcome{
+        grid-area: presentation;
+        width: 100%;
+        padding: 10px;
+    }
+    .horaire{
+        width: 100%;
+        grid-area: horaire;
+        border: solid darkgreen;
+        padding: 10px;
+    }
+    .prog{
+        width: 100%;
+        grid-area: prog;
+        border: solid darkgreen;
+        padding: 10px;
+    }
+    .actu{
+        width: 100%;
+        grid-area: evenement;
+        border: solid darkorange;
+        padding: 10px;
     }
 }

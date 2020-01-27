@@ -15,8 +15,7 @@
     <!--logo-->
     <div class="logo">
         <a href="/index" th:href="@{/}">
-            <img alt="logo bar bidule" th:src="@{/img/logo_titre.png}">
-            <img alt="logo mais pas que" th:src="@{/img/mais_pas_que.png}">
+            <img alt="logo bar bidule" th:src="@{/img/logo.jpg}">
         </a>
     </div>
     <!--Menu déroulant-->
@@ -63,17 +62,25 @@
 <br>
 
 <div class="leBarBidule">
-    <h1>Bienvenue au Bar Bidule</h1><br>
-    <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
+    <h1 class="welcome">Bienvenue au Bar Bidule</h1><br>
+    <section class="horaire">
+        <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
+    </section>
     <!--TODO penser à rendre la modif des horaires possible-->
-    <h2>Voici notre programation d'évènements pour le mois</h2><br>
-    <p>Affichez la <a href="../static/documents/PROG_BBD_JANV_2020.pdf" th:href="@{/documents/PROG_BBD_JANV_2020.pdf}">ici</a>
-    </p>
-    <p>Ou téléchargez la <a download="../static/documents/PROG_BBD_JANV_2020.pdf" href="../static/documents/PROG_BBD_JANV_2020.pdf"
-                            th:href="@{/documents/prog_A3.jpg}">ici</a></p>
-    <p>Actu : un specatcle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
-        <a href="https://www.facebook.com/events/494146774544780/">Contes de Saint-Valentin 3/10 ans</a>
-    </p>
+    <section class="prog">
+        <h2>Voici notre programation d'évènements pour le mois</h2><br>
+        <p>Affichez la <a href="../static/documents/PROG_BBD_JANV_2020.pdf"
+                          th:href="@{/documents/PROG_BBD_JANV_2020.pdf}">ici</a>
+        </p>
+        <p>Ou téléchargez la <a download="../static/documents/PROG_BBD_JANV_2020.pdf"
+                                href="../static/documents/PROG_BBD_JANV_2020.pdf"
+                                th:href="@{/documents/prog_A3.jpg}">ici</a></p>
+    </section>
+    <article class="actu">
+        <p>Actu : un specatcle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
+            <a href="https://www.facebook.com/events/494146774544780/">Contes de Saint-Valentin 3/10 ans</a>
+        </p>
+    </article>
 </div>
 <footer>
 </footer>
