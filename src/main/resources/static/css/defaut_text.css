@@ -74,6 +74,25 @@ h2 {
     font-size: 1.5rem;
     text-align: center;
 }
+hr {
+    display: block;
+    clear: both;
+    height: 0;
+    margin: 40px 0 80px;
+    padding: 0;
+    border: 0;
+    font-family: arial;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+}
+
+hr:after {
+    content: "\2601 \2729 \2601";
+    height: 0;
+    letter-spacing: 1em;
+    color: darkgreen;
+}
 
 .leBarBidule {
     margin-top: 17%;

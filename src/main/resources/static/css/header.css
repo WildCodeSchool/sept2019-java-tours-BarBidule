@@ -101,7 +101,7 @@ footer{
     nav input[type=checkbox]:checked + ul, nav ul{
         display: flex;
         flex-flow: row wrap;
-        background-color: white;
+        background-color: #F17E2D;
     }
     nav ul li{
         position: relative;
@@ -117,13 +117,13 @@ footer{
 
     }
     nav a:hover{
-        color: orange;
+        color: whitesmoke;
         border-bottom: 2px solid gold;
     }
     .sous{
         display: none;
         box-shadow: 0px 1px 2px #CCC;
-        background-color: white;
+        background-color: darkgreen;
         position: absolute;
         width: 100%;
         font-family: Arial, serif;
