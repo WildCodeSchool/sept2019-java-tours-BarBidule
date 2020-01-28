@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1>Bonjour, vous pouvez ici modifier le fichier de la programmation</h1>
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <form th:action="@{/admin/program}" enctype="multipart/form-data" method="POST">
+        <table>
+            <tr>
+                <td>Fichier à modifier:</td>
+                <td><input name="file" type="file"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Télécharger"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div>
+
+            <a th:href="${file}" th:text="${file}"/>
+</div>
+<br>
+<a class="bouton" th:href="@{/admin}">Retour</a>
+</body>
+</html>

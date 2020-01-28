@@ -15,13 +15,13 @@ public class Intervenant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String image;
     private String name;
     private String atelier1;
     private String description1;
-    private String atelier2;
     private String description2;
-    private String atelier3;
     private String description3;
+    private String description4;
     private String prix1;
     private String prix2;
 
@@ -34,12 +34,21 @@ public class Intervenant {
 
     // Getters et Setters
 
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getName() {
@@ -66,14 +75,6 @@ public class Intervenant {
         this.description1 = description1;
     }
 
-    public String getAtelier2() {
-        return atelier2;
-    }
-
-    public void setAtelier2(String atelier2) {
-        this.atelier2 = atelier2;
-    }
-
     public String getDescription2() {
         return description2;
     }
@@ -82,20 +83,20 @@ public class Intervenant {
         this.description2 = description2;
     }
 
-    public String getAtelier3() {
-        return atelier3;
-    }
-
-    public void setAtelier3(String atelier3) {
-        this.atelier3 = atelier3;
-    }
-
     public String getDescription3() {
         return description3;
     }
 
     public void setDescription3(String description3) {
         this.description3 = description3;
+    }
+
+    public String getDescription4() {
+        return description4;
+    }
+
+    public void setDescription4(String description4) {
+        this.description4 = description4;
     }
 
     public String getPrix1() {

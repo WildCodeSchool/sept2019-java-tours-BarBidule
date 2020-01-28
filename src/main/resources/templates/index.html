@@ -69,12 +69,12 @@
     <!--TODO penser à rendre la modif des horaires possible-->
     <section class="prog">
         <h2>Voici notre programation d'évènements pour le mois</h2><br>
-        <p>Affichez la <a href="../static/documents/PROG_BBD_JANV_2020.pdf"
-                          th:href="@{/documents/PROG_BBD_JANV_2020.pdf}">ici</a>
+        <p>Affichez la <a target="/files/programmation.pdf" href="/files/programmation.pdf"
+                          th:href="@{/files/programmation.pdf}">ici</a>
         </p>
-        <p>Ou téléchargez la <a download="../static/documents/PROG_BBD_JANV_2020.pdf"
-                                href="../static/documents/PROG_BBD_JANV_2020.pdf"
-                                th:href="@{/documents/prog_A3.jpg}">ici</a></p>
+        <p>Ou téléchargez la <a download="/files/programmation.pdf"
+                                href="/files/programmation.pdf"
+                                th:href="@{/files/programmation.pdf}">ici</a></p>
     </section>
     <article class="actu">
         <p>Actu : un specatcle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
