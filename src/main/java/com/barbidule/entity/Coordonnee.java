@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * Creation d'une actualité
  */
 @Entity
-public class Coordonnees {
+public class Coordonnee {
 
     // Précision et génération de l'id de l'actualité
     @Id
@@ -21,7 +21,7 @@ public class Coordonnees {
 
 
     // Constructeur vide
-    public Coordonnees() {
+    public Coordonnee() {
     }
 
     // Getters et Setters
