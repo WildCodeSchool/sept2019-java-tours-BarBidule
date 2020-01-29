@@ -61,13 +61,16 @@
 </header>
 <br>
 
-<div class="leBarBidule">
-    <h1 class="welcome">Bienvenue au Bar Bidule</h1><br>
-    <section class="horaire">
+
+<!-- Section grid -->
+
+<div class="wrapper">
+    <h1 class="box a">Bienvenue au Bar Bidule</h1><br>
+    <section class="box b">
         <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
     </section>
     <!--TODO penser à rendre la modif des horaires possible-->
-    <section class="prog">
+    <section class="box c">
         <h2>Voici notre programation d'évènements pour le mois</h2><br>
         <p>Affichez la <a href="../static/documents/PROG_BBD_JANV_2020.pdf"
                           th:href="@{/documents/PROG_BBD_JANV_2020.pdf}">ici</a>
@@ -76,13 +79,75 @@
                                 href="../static/documents/PROG_BBD_JANV_2020.pdf"
                                 th:href="@{/documents/prog_A3.jpg}">ici</a></p>
     </section>
-    <article class="actu">
-        <p>Actu : un specatcle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
+    <article class="box d">
+        <p>Actu : un spectacle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
             <a href="https://www.facebook.com/events/494146774544780/">Contes de Saint-Valentin 3/10 ans</a>
         </p>
     </article>
+    <article class="box e">
+        <p>Je testouille voir ce que ça donne
+            <a href="https://www.facebook.com/events/494146774544780/">Contes de la princesse Yvettes ft. Arsène</a>
+        </p>
+    </article>
 </div>
-<footer>
-</footer>
+
+<!-- Footer-->
+<footer th:fragment="footer" class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">LE BAR BIDULE</h1>
+          
+      <h2>Contact</h2>
+      
+      <address>
+        64, rue d'Entraigues. 37000, TOURS<br>
+            
+        <a class="footer__btn" href="mailto:example@gmail.com">MAIL</a>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+        <li class="nav__item nav"><a th:href="@{/leBarBidule}"><h2 class="nav__title">Le Bar Bidule &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="/leBarBidule/#espace">L'espace de jeux/jardin</a></li>
+                <li><a href="/leBarBidule/#resto">Le bar et resto Bidule</a></li>
+                <li><a href="/leBarBidule/#ateliers">Les ateliers</a></li>
+                <li><a href="/leBarBidule/#spectacle">les spectacles et concerts</a></li>
+                <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
+            </ul>
+        </li>
+        <li class="nav__item nav__item--extra"><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants &ensp;</h2></a>
+            <ul class="nav__ul nav__ul--extra">
+                <li><a href="/cafe/#cafe">C'est quoi un Café des Enfants ?</a></li>
+                <li><a href="/cafe/#histoire">L'histoire du Bar Bidule</a></li>
+                <li><a href="/cafe/#adherents">Les adhérents</a></li>
+            </ul>
+        </li>
+        <li class="nav__item"><a th:href="@{/mais}"><h2 class="nav__title">Mais pas que... &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="/mais/#murs">Le Bar Bidule hors les murs</a></li>
+                <li><a href="/mais/#copains">Les copains du Bar Bidule</a></li>
+                <li><a href="/mais/#social">L'action sociale et médico-sociale</a></li>
+            </ul>
+        </li>
+        <li class="nav__item"><a th:href="@{/contact}"><h2 class="nav__title">Contactez-nous &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="#">Formulaire de contact</a></li>
+                <li><a href="#">Plan d'acces</a></li>
+                <li><a href="#">Télephone</a></li>
+                <li><a href="#">Adresse</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="legal">
+      <p>&copy; 2020. All rights reserved.</p>
+      
+      <div class="legal__links">
+        <span>Made with <span class="heart">♥</span></span>
+      </div>
+    </div>
+  </footer>
+
+<!--Fin du footer-->
 </body>
 </html>
