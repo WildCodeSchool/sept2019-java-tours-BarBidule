@@ -62,7 +62,7 @@
 <br>
 
 
-<!-- test -->
+<!-- Section grid -->
 
 <div class="wrapper">
     <h1 class="box a">Bienvenue au Bar Bidule</h1><br>
@@ -91,10 +91,68 @@
     </article>
 </div>
 
-<!-- Fin du test -->
+<!-- Footer-->
+<footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">LE BAR BIDULE</h1>
+          
+      <h2>Contact</h2>
+      
+      <address>
+        64, rue d'Entraigues. 37000, TOURS<br>
+            
+        <a class="footer__btn" href="mailto:example@gmail.com">MAIL</a>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+        <li class="nav__item nav"><a th:href="@{/leBarBidule}"><h2 class="nav__title">Le Bar Bidule &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="/leBarBidule/#espace">L'espace de jeux/jardin</a></li>
+                <li><a href="/leBarBidule/#resto">Le bar et resto Bidule</a></li>
+                <li><a href="/leBarBidule/#ateliers">Les ateliers</a></li>
+                <li><a href="/leBarBidule/#spectacle">les spectacles et concerts</a></li>
+                <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
+            </ul>
+        </li>
+        <li class="nav__item nav__item--extra"><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants &ensp;</h2></a>
+            <ul class="nav__ul nav__ul--extra">
+                <li><a href="/cafe/#cafe">C'est quoi un Café des Enfants ?</a></li>
+                <li><a href="/cafe/#histoire">L'histoire du Bar Bidule</a></li>
+                <li><a href="/cafe/#adherents">Les adhérents</a></li>
+            </ul>
+        </li>
+        <li class="nav__item"><a th:href="@{/mais}"><h2 class="nav__title">Mais pas que... &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="/mais/#murs">Le Bar Bidule hors les murs</a></li>
+                <li><a href="/mais/#copains">Les copains du Bar Bidule</a></li>
+                <li><a href="/mais/#social">L'action sociale et médico-sociale</a></li>
+            </ul>
+        </li>
+        <li class="nav__item"><a th:href="@{/contact}"><h2 class="nav__title">Contactez-nous &ensp;</h2></a>
+            <ul class="nav__ul">
+                <li><a href="#">Formulaire de contact</a></li>
+                <li><a href="#">Plan d'acces</a></li>
+                <li><a href="#">Télephone</a></li>
+                <li><a href="#">Adresse</a></li>
+            </ul>
+        </li>
+    </ul>
 
 
-<footer>
-</footer>
+
+
+
+    
+    <div class="legal">
+      <p>&copy; 2020. All rights reserved.</p>
+      
+      <div class="legal__links">
+        <span>Made with <span class="heart">♥</span></span>
+      </div>
+    </div>
+  </footer>
+
+<!--Fin du footer-->
 </body>
 </html>
