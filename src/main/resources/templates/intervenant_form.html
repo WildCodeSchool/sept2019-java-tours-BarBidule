@@ -11,27 +11,27 @@
 <body>
 <h1>Bonjour, vous pouvez ici créer un nouvel intervenant</h1>
 <section>
-
-    <form class="intervenant" method="post" th:action="@{/admin/intervenant/create}" th:object="${intervenant}">
+    <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
+        <label for="imageIntervenant">Image:</label>
+        <input id="imageIntervenant" name="file" type="file" th:field="*{image}"/>
         <label for="name">Nom de l'intervenant : </label><br>
         <input id="name" th:field=*{name} type="text"><br>
         <label for="atelier1">Titre de l'atelier 1 : </label><br>
         <input id="atelier1" th:field=*{atelier1} type="text"><br>
         <label for="description1">Description numero 1: </label><br>
         <textarea id="description1" th:field=*{description1}></textarea><br>
-        <label for="atelier2">Titre de l'atelier 2 : </label><br>
-        <input id="atelier2" th:field=*{atelier2} type="text"><br>
         <label for="description2">Description numero 2: </label><br>
         <textarea id="description2" th:field=*{description2}></textarea><br>
-        <label for="atelier3">Titre de l'atelier 3 : </label><br>
-        <input id="atelier3" th:field=*{atelier3} type="text"><br>
         <label for="description3">Description numero 3: </label><br>
         <textarea id="description3" th:field=*{description3}></textarea><br>
+        <label for="description4">Description numero 4: </label><br>
+        <textarea id="description4" th:field=*{description4}></textarea><br>
         <label for="prix1">prix numero 1: </label><br>
         <input id="prix1" th:field=*{prix1} type="text"><br>
         <label for="prix2">prix numero 2: </label><br>
         <input id="prix2" th:field=*{prix2} type="text"><br>
-        <input type="submit" value="Sauver">
+        <input th:field="*{id}" type="hidden">
+        <input type="submit" value="Créer">
     </form>
 </section>
 <br>

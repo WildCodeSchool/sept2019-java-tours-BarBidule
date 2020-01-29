@@ -16,8 +16,8 @@
         <a href="#">
             <!-- Image de l'atelier -->
             <div class="card-image"><img
-                    alt="Orange"
-                    src="https://damienflandrin.fr/storage/tutoriel-realiser-une-carte-en-css/card-image.jpg"/></div>
+                    alt="image"
+                    th:src="@{${intervenant.imageUrl}}"/></div>
             <!-- Fin de l'image de l'atelier -->
             <!-- Corp de la carte -->
             <div class="card-body">
@@ -31,19 +31,16 @@
                 <br>
                 <br>
                 <div class="card-excerpt">
-                    <p class="card-exerpt" th:text="${intervenant.description1}"/>
-                </div>
-                <div class="card-title">
-                    <p th:text="${intervenant.atelier2}"/>
+                    <p th:text="${intervenant.description1}"/>
                 </div>
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description2}"/>
                 </div>
-                <div class="card-title">
-                    <p th:text="${intervenant.atelier3}"/>
-                </div>
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description3}"/>
+                </div>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description4}"/>
                 </div>
                 <br>
                 <div class="card-name">

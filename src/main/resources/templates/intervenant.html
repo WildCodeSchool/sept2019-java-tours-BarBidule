@@ -16,8 +16,8 @@
             <a href="#">
                 <!-- Image de l'atelier -->
                 <div class="card-image"><img
-                        alt="Orange"
-                        src="https://damienflandrin.fr/storage/tutoriel-realiser-une-carte-en-css/card-image.jpg"/></div>
+                        alt="image"
+                        th:src="@{${intervenant.imageUrl}}"/></div>
                 <!-- Fin de l'image de l'atelier -->
                 <!-- Corp de la carte -->
                 <div class="card-body">
@@ -31,19 +31,16 @@
                     <br>
                     <br>
                     <div class="card-excerpt">
-                        <p class="card-exerpt" th:text="${intervenant.description1}"/>
-                    </div>
-                    <div class="card-title">
-                        <p th:text="${intervenant.atelier2}"/>
+                        <p th:text="${intervenant.description1}"/>
                     </div>
                     <div class="card-excerpt">
                         <p th:text="${intervenant.description2}"/>
                     </div>
-                    <div class="card-title">
-                        <p th:text="${intervenant.atelier3}"/>
-                    </div>
                     <div class="card-excerpt">
                         <p th:text="${intervenant.description3}"/>
+                    </div>
+                    <div class="card-excerpt">
+                        <p th:text="${intervenant.description4}"/>
                     </div>
                     <br>
                     <div class="card-name">
@@ -58,21 +55,21 @@
         </li>
     </ul>
 
-    <form class="intervenant" method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
+    <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
+        <label for="imageIntervenant">Image:</label>
+        <input id="imageIntervenant" name="file" type="file" th:field="*{image}"/>
         <label for="name">Nom de l'intervenant : </label><br>
         <input id="name" th:field=*{name} type="text"><br>
         <label for="atelier1">Titre de l'atelier 1 : </label><br>
         <input id="atelier1" th:field=*{atelier1} type="text"><br>
         <label for="description1">Description numero 1: </label><br>
         <textarea id="description1" th:field=*{description1}></textarea><br>
-        <label for="atelier2">Titre de l'atelier 2 : </label><br>
-        <input id="atelier2" th:field=*{atelier2} type="text"><br>
         <label for="description2">Description numero 2: </label><br>
         <textarea id="description2" th:field=*{description2}></textarea><br>
-        <label for="atelier3">Titre de l'atelier 3 : </label><br>
-        <input id="atelier3" th:field=*{atelier3} type="text"><br>
         <label for="description3">Description numero 3: </label><br>
         <textarea id="description3" th:field=*{description3}></textarea><br>
+        <label for="description4">Description numero 4: </label><br>
+        <textarea id="description4" th:field=*{description4}></textarea><br>
         <label for="prix1">prix numero 1: </label><br>
         <input id="prix1" th:field=*{prix1} type="text"><br>
         <label for="prix2">prix numero 2: </label><br>

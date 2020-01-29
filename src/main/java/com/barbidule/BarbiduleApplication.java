@@ -23,7 +23,8 @@ public class BarbiduleApplication {
     @Bean
     CommandLineRunner init(StorageService storageService) {
         return (args) -> {
-            storageService.init();
+            //storageService.deleteAll();
+            //storageService.init();
         };
     }
 }
