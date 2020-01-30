@@ -1,7 +1,11 @@
 package com.barbidule.controller;
 
+import com.barbidule.entity.Actualite;
+import com.barbidule.entity.Coordonnee;
 import com.barbidule.entity.FormuleDuJour;
 import com.barbidule.entity.Intervenant;
+import com.barbidule.repository.ActualiteRepository;
+import com.barbidule.repository.CoordonneeRepository;
 import com.barbidule.repository.FormuleDuJourRepository;
 import com.barbidule.repository.IntervenantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * MainController est une classe ou sont présents les divers controllers
@@ -25,13 +30,29 @@ public class MainController {
     private FormuleDuJourRepository formuleDuJourRepository;
     @Autowired
     private IntervenantRepository intervenantRepository;
+    @Autowired
+    private ActualiteRepository actualiteRepository;
+    @Autowired
+    private CoordonneeRepository coordonneeRepository;
 
 
     // --------- Mapping général du site -------------
 
+    // page accueil
     @GetMapping(value = "/")
-    public String index() {
-        return "index.html";
+    public String index(Model model) {
+        // Si l'on trouve une actualité
+        Optional<Actualite> actualite = actualiteRepository.findById(1);
+        Optional<Coordonnee> coordonnee = coordonneeRepository.findById(1);
+        if (coordonnee.isPresent()) {
+            model.addAttribute("coordonnee", coordonnee.get());
+            if (actualite.isPresent()) {
+                // Envoi de l'actualité à la vue
+                model.addAttribute("actualite", actualite.get());
+                return "index.html";
+            }
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "L'actualité n'existe pas");
     }
 
     @GetMapping(value = "/documents/prog_A3")

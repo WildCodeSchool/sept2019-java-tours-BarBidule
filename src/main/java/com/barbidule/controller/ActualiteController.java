@@ -36,10 +36,10 @@ public class ActualiteController {
     // Controller qui affiche l'actualité à éditer.
     @GetMapping(value = "/admin/actualite")
     public String edit(Model model) {
-        // Si l'on trouve l'intervenant
+        // Si l'on trouve une actualité
         Optional<Actualite> actualite = actualiteRepository.findById(1);
         if (actualite.isPresent()) {
-            // Envoi de l'intervenant à la vue
+            // Envoi de l'actualité à la vue
             model.addAttribute("actualite", actualite.get());
             return "actualite";
         }
