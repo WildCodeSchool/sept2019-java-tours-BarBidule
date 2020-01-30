@@ -14,7 +14,13 @@ public class Actualite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String imageUrl;
+    /* Déclaration de la constante pour l'url de l'image afin de pouvoir la conserver
+    *  si l'utilisateur decide de ne pas changer l'image à chaque modification de
+    *  l'actualité
+     */
+    final static String IMAGE_URL = "/files/actualite.png";
+
+    // Annotation qui empêche l'enregistrement en base de donnée
     @Transient
     private MultipartFile image;
     private String titre;
@@ -37,12 +43,9 @@ public class Actualite {
         this.id = id;
     }
 
+    // Methode permettant d'acceder à la constante de l'url de l'image dans thymeleaf
     public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+        return IMAGE_URL;
     }
 
     public MultipartFile getImage() {

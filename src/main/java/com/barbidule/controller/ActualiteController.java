@@ -48,22 +48,19 @@ public class ActualiteController {
 
     // Controller qui permet la modification de l'actualité.
     @PostMapping("/admin/actualite")
-    public String SaveEdit(@Valid Actualite actualite, BindingResult bindingResult, Model model) {
+    public String saveEdit(@Valid Actualite actualite, BindingResult bindingResult, Model model) {
         // Si le validateur rencontre des erreurs dans les champs renseignés
         if (bindingResult.hasErrors()) {
             return "actualite";
         }
         // Upload de l'image et définition de son nom en fonction du nom de l'actualité.
-        String imageName = actualite.getTitre() + "." + actualite.getImage().getContentType().split("/")[1];
-        String imageUrl = "/files/" + imageName;
+        String imageName = "actualite." + actualite.getImage().getContentType().split("/")[1];
         // Sauvegarde de l'image de l'actualité.
-        if (actualite.getImage().isEmpty()) {
-            actualite.setImageUrl(imageUrl);
+        if (actualite.getImage() == null || actualite.getImage().isEmpty()) {
             actualiteRepository.save(actualite);
             return "actualite";
         }
         storageService.store(actualite.getImage(), imageName);
-        actualite.setImageUrl(imageUrl);
         // Sauvegarde en base de donnée de l'intervenant.
         actualiteRepository.save(actualite);
         return "actualite";
