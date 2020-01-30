@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuAdmin</title>
+    <link data-th-href="@{/css/menu.css}" href="../static/css/menu.css" media="all" rel="stylesheet"
+          type="text/css"/>
+    <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body>
+<h1>Bonjour, vous pouvez ici éditer votre intervenant</h1>
+<section class="carte">
+    <ul class="carte">
+        <li class="card">
+                <!-- Image de l'actualité -->
+                <div class="card-image"><img
+                        alt="image"
+                        th:src="@{${actualite.ImageUrl}}"/></div>
+                <!-- Fin de l'image de l'atelier -->
+                <!-- Corp de la carte -->
+                <div class="card-body">
+
+                    <div class="card-title">
+                        <h3 class="card-title" th:text="${actualite.titre}"/>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="card-excerpt">
+                        <p th:text="${actualite.description}"/>
+                    </div>
+
+                    <br>
+                    <div class="card-name">
+                        <p class="card-name">Vous pouvez en savoir plus en cliquant
+                            <a th:href="@{${actualite.lien}}">ici</a></p>
+                    </div>
+                </div>
+                <!-- Fin du corp de la carte -->
+            <br>
+            <hr>
+        </li>
+    </ul>
+
+    <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/actualite}" th:object="${actualite}">
+        <label for="imageActualite">Image:</label>
+        <input id="imageActualite" name="file" type="file" th:field="*{image}"/>
+        <label for="titre">Titre de l'actualité : </label><br>
+        <input id="titre" th:field=*{titre} type="text"><br>
+        <label for="description">description de l'actualité : </label><br>
+        <input id="description" th:field=*{description} type="text"><br>
+        <label for="lien">lien: </label><br>
+        <textarea id="lien" th:field=*{lien}></textarea><br>
+        <input th:field="*{id}" type="hidden">
+        <input type="submit" value="Modifier">
+    </form>
+</section>
+<br>
+<a class="bouton" th:href="@{/admin}">Retour</a>
+</body>
+</html>

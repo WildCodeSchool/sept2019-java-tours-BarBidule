@@ -12,6 +12,7 @@
 <h1 th:text="|Etes-vous sûre de vouloir supprimer ${intervenant.name}?|" />
     <form method="post" th:action="@{/admin/intervenant/delete}" th:object="${intervenant}">
         <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{imageUrl}" />
         <input class="bouton" type="submit" value="Supprimer">
     </form>
 <br>
