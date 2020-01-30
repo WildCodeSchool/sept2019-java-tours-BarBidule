@@ -1,9 +1,8 @@
 package com.barbidule.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
 
 /**
  * Creation d'une actualité
@@ -15,7 +14,9 @@ public class Actualite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String image;
+    private String imageUrl;
+    @Transient
+    private MultipartFile image;
     private String titre;
     private String description;
     private String lien;
@@ -36,11 +37,19 @@ public class Actualite {
         this.id = id;
     }
 
-    public String getImage() {
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public MultipartFile getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(MultipartFile image) {
         this.image = image;
     }
 
