@@ -60,12 +60,20 @@ public class IntervenantController {
     }
 
     // Controller qui permet la modification de l'intervenant.
-    // TODO Trouver un moyen de ne pas remplacer l'image par un vide
     @PostMapping("/admin/intervenant")
     public String SaveEdit(@Valid Intervenant intervenant, BindingResult bindingResult, Model model) {
         // Si le validateur rencontre des erreurs dans les champs renseignés
         if (bindingResult.hasErrors()) {
             return "intervenant";
+        }
+        if (intervenant.getImage() == null || intervenant.getImage().isEmpty()) {
+            Optional<Intervenant> intervenant1 = intervenantRepository.findById(intervenant.getId());
+            if (intervenant1.isPresent()) {
+                intervenant.setImageUrl(intervenant1.get().getImageUrl());
+                intervenantRepository.save(intervenant);
+                return "intervenant";
+            }
+            throw new ResponseStatusException(HttpStatus.PRECONDITION_REQUIRED,"L'intervenant est sensé avoir une image");
         }
         String imageName = intervenant.getName() + "." + intervenant.getImage().getContentType().split("/")[1];
         String imageUrl = "/files/"+imageName;
