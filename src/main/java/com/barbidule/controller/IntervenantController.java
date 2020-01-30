@@ -112,7 +112,7 @@ public class IntervenantController {
 
     @PostMapping("/admin/intervenant/delete")
     public String deleteIntervenant(Intervenant intervenant) {
-
+        storageService.delete(intervenant.getImageUrl().replace("/files/", ""));
         intervenantRepository.delete(intervenant);
         return "redirect:/admin/intervenants";
     }
