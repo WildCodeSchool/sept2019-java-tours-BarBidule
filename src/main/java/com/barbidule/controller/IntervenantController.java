@@ -60,6 +60,7 @@ public class IntervenantController {
     }
 
     // Controller qui permet la modification de l'intervenant.
+    // TODO Trouver un moyen de ne pas remplacer l'image par un vide
     @PostMapping("/admin/intervenant")
     public String SaveEdit(@Valid Intervenant intervenant, BindingResult bindingResult, Model model) {
         // Si le validateur rencontre des erreurs dans les champs renseignés
