@@ -67,9 +67,8 @@
 <div class="wrapper">
     <h1 class="box a">Bienvenue au Bar Bidule</h1><br>
     <section class="box b">
-        <p>horaires : mercredi 10/18h - samedi et dimanche 15/18h</p><br>
+        <p th:text="${coordonnee.horaire}" /><br>
     </section>
-    <!--TODO penser à rendre la modif des horaires possible-->
     <section class="box c">
         <h2>Voici notre programation d'évènements pour le mois</h2><br>
         <p>Affichez la <a target="/files/programmation.pdf" href="/files/programmation.pdf"
@@ -79,12 +78,39 @@
                                 href="/files/programmation.pdf"
                                 th:href="@{/files/programmation.pdf}">ici</a></p>
     </section>
-    <article class="box d">
-        <p>Actu : un spectacle déjà calé pour février, vous trouverez toutes les infos sur ce lien fb:
-            <a href="https://www.facebook.com/events/494146774544780/">Contes de Saint-Valentin 3/10 ans</a>
-        </p>
-    </article>
     <article class="box e">
+        <ul class="carte">
+            <li class="card">
+                <!-- Image de l'actualité -->
+                <div class="card-image"><img
+                        alt="image"
+                        th:src="@{${actualite.ImageUrl}}"/></div>
+                <!-- Fin de l'image de l'atelier -->
+                <!-- Corp de la carte -->
+                <div class="card-body">
+
+                    <div class="card-title">
+                        <h3 class="card-title" th:text="${actualite.titre}"/>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="card-excerpt">
+                        <p th:text="${actualite.description}"/>
+                    </div>
+
+                    <br>
+                    <div class="card-name">
+                        <p class="card-name">Vous pouvez en savoir plus en cliquant
+                            <a th:href="@{${actualite.lien}}">ici</a></p>
+                    </div>
+                </div>
+                <!-- Fin du corp de la carte -->
+                <br>
+                <hr>
+            </li>
+        </ul>
+    </article>
+    <article class="box d">
         <p>Je testouille voir ce que ça donne
             <a href="https://www.facebook.com/events/494146774544780/">Contes de la princesse Yvettes ft. Arsène</a>
         </p>
