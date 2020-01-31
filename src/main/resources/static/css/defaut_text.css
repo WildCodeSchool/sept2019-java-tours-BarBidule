@@ -359,66 +359,12 @@ Zone de code qui gère le grid de la page d'accueil.
     .actu{
         width: 100%;
         grid-area: evenement;
-        border: solid darkorange;
         padding: 10px;
     }
 }
 
-/* GRID TEST */
+/* BODY */
 
-.wrapper {
-    display: grid;
-    grid-gap: 4px;
-		grid-template-columns: 25vw 25vw 10vw 40vw;
-		background-color: #fff;
-		color: #444;
-    height: 100vh;
-	}
-
-	.box {
-        background: #fff;
-		border-radius: 5px;
-		padding: 20px;
-		font-size: 150%;
-	}
-
-.box:nth-child(2) {
-  background: #fff;
-}
-.box:nth-child(3) {
-  background: #fff;
-}
-.box:nth-child(4) {
-  background: #F17E30;
-}
-.box:nth-child(5) {
-  background: #fff;
-}
-.box:nth-child(6) {
-    background: #F17E30;
-}
-
-	.a {
-		grid-column: 1 / 3;
-		grid-row: 1;
-	}
-	.b {
-		grid-column: 3 / 5;
-		grid-row: 1;
-	}
-	.c {
-		grid-column: 1 / 3;
-		grid-row: 2;
-	}
-	.d {
-		grid-column: 3;
-		grid-row: 2;
-	}
-	.e {
-		grid-column: 4;
-		grid-row: 2;
-    }
-    
 /* FOOTER */
 
 *, *:before, *:after {
@@ -458,7 +404,7 @@ Zone de code qui gère le grid de la page d'accueil.
     font-weight: 400;
     text-transform: lowercase;
     font-size: 1.5rem;
-    color: #F17E30;
+    color: #F2D194;
     text-transform: capitalize;
   }
   
@@ -485,7 +431,7 @@ Zone de code qui gère le grid de la page d'accueil.
     justify-content: center;
     height: 36px;
     max-width: max-content;
-    background-color: #F17E30;
+    background-color: #F2D194;
     border-radius: 100px;
     color: white;
     line-height: 0;
@@ -518,7 +464,7 @@ Zone de code qui gère le grid de la page d'accueil.
   }
   
   .nav__ul a {
-    color: #F17E30;
+    color: #F2D194;
   }
   
 
@@ -542,6 +488,11 @@ Zone de code qui gère le grid de la page d'accueil.
   .heart {
     color: #2f2f2f;
   }
+
+  #logo__footer {
+      width: 30%;
+  }
+
   
   @media screen and (min-width: 24.375em) {
     .legal .legal__links {
