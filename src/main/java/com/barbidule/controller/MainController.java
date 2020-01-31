@@ -93,10 +93,4 @@ public class MainController {
         return "mais_pas_que";
     }
 
-    // Controller du quatrième onglet du menu.
-    @GetMapping(value = "/contact")
-    public String MenuContact() {
-        return "contact";
-    }
-
 }

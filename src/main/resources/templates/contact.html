@@ -18,13 +18,14 @@
 <br>
 <h2>Nous contacter :</h2>
 <!-- formulaire de contact-->
-<form class="flex-form">
-    <input placeholder="&#128100;" type="text">
-    <input placeholder="@" type="email">
-    <input pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" placeholder="tél: 06 25 66 18 00" type="tel">
-    <textarea placeholder="Taper votre message ici"></textarea>
+<form class="flex-form" method="post" th:action="@{/contact}" th:object="${formulaire}">
+    <input placeholder="nom ou pseudo" type="text" th:field="*{name}">
+    <input placeholder="@" type="email" th:field="*{email}">
+    <input placeholder="tél: 06 25 66 18 00" type="tel" th:field="*{tel}">
+    <textarea placeholder="Taper votre message ici" th:field="*{message}"></textarea>
     <input class="button" type="submit" value="ENVOYER"/>
 </form>
+<p>En cliquant sur "envoyer" vous décidez de nous envoyer vos coordonnées de contact, celle-ci serviront uniquement à pouvoir vous répondre</p>
 
 <!--TODO générer 'affichage avec thymeleaf des coordonnées-->
 <h2>Où sommes nous?</h2>
