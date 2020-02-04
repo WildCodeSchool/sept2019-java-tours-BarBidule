@@ -443,6 +443,26 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     }
 }
 
+/******
+    Section qui concerne l'upload de la programmation dans l'interface admin
+ */
+#main_prog{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25rem;
+}
+#prog_uplod{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+#prog_uplod input{
+    margin-bottom: 2%;
+}
+#prog_uplod h2{
+    margin-bottom: 5%;
+}
 /* BODY */
 
 /* FOOTER */
