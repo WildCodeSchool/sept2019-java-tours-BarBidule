@@ -18,46 +18,50 @@
                 <div class="card-image"><img
                         alt="image"
                         th:src="@{${intervenant.imageUrl}}"/></div>
-                <!-- Fin de l'image de l'atelier -->
-                <!-- Corp de la carte -->
-                <div class="card-body">
-                    <div class="card-name">
-                        <p th:text="${intervenant.name}"/>
-                    </div>
-                    <br>
-                    <div class="card-title">
-                        <h3 class="card-title" th:text="${intervenant.atelier1}"/>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="card-excerpt">
-                        <p th:text="${intervenant.description1}"/>
-                    </div>
-                    <div class="card-excerpt">
-                        <p th:text="${intervenant.description2}"/>
-                    </div>
-                    <div class="card-excerpt">
-                        <p th:text="${intervenant.description3}"/>
-                    </div>
-                    <div class="card-excerpt">
-                        <p th:text="${intervenant.description4}"/>
-                    </div>
-                    <br>
-                    <div class="card-name">
-                        <p class="card-name" th:text="${intervenant.prix1}"/>
-                        <p class="card-name" th:text="${intervenant.prix2}"/>
-                    </div>
-                </div>
-                <!-- Fin du corp de la carte -->
             </a>
+            <!-- Fin de l'image de l'atelier -->
+            <!-- Corp de la carte -->
+            <div class="card-body">
+                <div class="card-name">
+                    <p th:text="${intervenant.name}"/>
+                </div>
+                <br>
+                <div class="card-title">
+                    <h3 class="card-title" th:text="${intervenant.atelier1}"/>
+                </div>
+                <br>
+                <br>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description1}"/>
+                </div>
+                <br>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description2}"/>
+                </div>
+                <br>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description3}"/>
+                </div>
+                <br>
+                <div class="card-excerpt">
+                    <p th:text="${intervenant.description4}"/>
+                </div>
+                <br>
+                <div class="card-name">
+                    <p class="card-name" th:text="${intervenant.prix1}"/>
+                    <p class="card-name" th:text="${intervenant.prix2}"/>
+                </div>
+            </div>
+            <!-- Fin du corp de la carte -->
             <br>
             <hr>
         </li>
     </ul>
 
-    <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/intervenant}" th:object="${intervenant}">
+    <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/intervenant}"
+          th:object="${intervenant}">
         <label for="imageIntervenant">Image:</label>
-        <input id="imageIntervenant" name="file" type="file" th:field="*{image}"/>
+        <input id="imageIntervenant" name="file" th:field="*{image}" type="file"/>
         <label for="name">Nom de l'intervenant : </label><br>
         <input id="name" th:field=*{name} type="text"><br>
         <label for="atelier1">Titre de l'atelier 1 : </label><br>

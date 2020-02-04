@@ -173,7 +173,13 @@ td:not([align]), th:not([align]) {
 /*
     ------------------ SECTION ANNIVERSAIRE -----------------
 */
-
+.anniversaire{
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    width: 80%;
+    margin: auto;
+}
 
 @media screen and (max-width: 900px) {
     .container-restauration {
@@ -205,7 +211,6 @@ td:not([align]), th:not([align]) {
     .intervenant p {
         font-size: 2rem;
     }
-
 
 
 }

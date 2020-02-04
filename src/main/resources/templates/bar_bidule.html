@@ -20,14 +20,14 @@
 <header th:replace="index :: header"/>
 <br>
 <!-- import logo du Titre-->
-
+<div class="decal"></div>
 <!-- Section page-->
 <div class="barBidule">
 
     <!-- Zone Jeu et jardin-->
     <div class="titre_section">
         <img alt-title="#" class="img_titre_section"
-             src="../static/img/lectures_partages.jpg" th:src="@{/img/lectures_partages.jpg}"/>
+             src="../static/img/espace-jeu.jpg" th:src="@{/img/espace-jeu.jpg}"/>
         <div class="sous_titre_section">
             <h1 id="espace">L'espace de jeux et jardin</h1>
             <br>
@@ -39,7 +39,7 @@
     <br>
     <div class="spoiler" data-isOuvert="false">
         <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
-               value="En savoir plus"/>
+               value="En savoir +"/>
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
@@ -70,7 +70,7 @@
     <br>
     <div class="spoiler" data-isOuvert="false">
         <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
-               value="En savoir plus"/>
+               value="En savoir +"/>
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
@@ -131,7 +131,7 @@
     <br>
     <div class="spoiler" data-isOuvert="false">
         <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
-               value="En savoir plus"/>
+               value="En savoir +"/>
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
@@ -142,6 +142,7 @@
                         <div class="card-image"><img
                                 alt="image"
                                 th:src="@{${intervenant.imageUrl}}"/></div>
+                    </a>
                         <!-- Fin de l'image de l'atelier -->
                         <!-- Corp de la carte -->
                         <div class="card-body">
@@ -157,12 +158,15 @@
                             <div class="card-excerpt">
                                 <p th:text="${intervenant.description1}"/>
                             </div>
+                            <br>
                             <div class="card-excerpt">
                                 <p th:text="${intervenant.description2}"/>
                             </div>
+                            <br>
                             <div class="card-excerpt">
                                 <p th:text="${intervenant.description3}"/>
                             </div>
+                            <br>
                             <div class="card-excerpt">
                                 <p th:text="${intervenant.description4}"/>
                             </div>
@@ -196,7 +200,7 @@
     <br>
     <div class="spoiler" data-isOuvert="false">
         <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
-               value="En savoir plus"/>
+               value="En savoir +"/>
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
@@ -223,7 +227,7 @@
     <br>
     <div class="spoiler" data-isOuvert="false">
         <input class="boutonAfficher" onclick="this.parentNode.setAttribute('data-isOuvert', true);" type="button"
-               value="En savoir plus"/>
+               value="En savoir +"/>
         <input class="boutonMasquer" onclick="this.parentNode.setAttribute('data-isOuvert', false);" type="button"
                value="Masquer"/>
         <div class="contenuSpoiler">
@@ -248,9 +252,7 @@
                     <br>
                     50€ la mise à disposition du local <br>
                     Réservé aux adhérents
-                </p><br>
-                <p>vous pouvez télécharger un carton d'invitation <a
-                        th:href="@{/documents/carton_invitation.pdf}">ici</a></p>
+                </p>
             </section>
         </div>
     </div>
