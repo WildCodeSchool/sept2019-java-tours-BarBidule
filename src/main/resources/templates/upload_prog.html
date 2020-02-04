@@ -10,27 +10,17 @@
 </head>
 <body>
 <h1>Bonjour, vous pouvez ici modifier le fichier de la programmation</h1>
+<div id="main_prog">
 <div th:if="${message}">
     <h2 th:text="${message}"/>
+    <br>
 </div>
-
-<div>
-    <form th:action="@{/admin/program}" enctype="multipart/form-data" method="POST">
-        <table>
-            <tr>
-                <td>Fichier à modifier:</td>
-                <td><input name="file" type="file"/></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Télécharger"/></td>
-            </tr>
-        </table>
+    <form id="prog_uplod" enctype="multipart/form-data" method="POST" th:action="@{/admin/program}">
+        <h2>Fichier à modifier:</h2>
+        <br>
+        <input name="file" type="file"/>
+        <input type="submit" value="Télécharger"/>
     </form>
-</div>
-
-<div>
-
     <p>le fichier est <a href="/files/programmation.pdf">ici</a></p>
 </div>
 <br>

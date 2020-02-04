@@ -9,7 +9,7 @@
           type="text/css"/>
 </head>
 <body>
-<h1>Bonjour, vous pouvez ici éditer votre intervenant</h1>
+<h1>Bonjour, vous pouvez ici éditer votre actualité</h1>
 <section class="carte">
     <ul class="carte">
         <li class="card">
@@ -38,13 +38,12 @@
                 </div>
                 <!-- Fin du corp de la carte -->
             <br>
-            <hr>
         </li>
     </ul>
 
     <form class="intervenant" enctype="multipart/form-data" method="post" th:action="@{/admin/actualite}" th:object="${actualite}">
         <label for="imageActualite">Image:</label>
-        <input id="imageActualite" name="file" type="file" th:field="*{image}"/>
+        <input id="imageActualite" name="file" type="file" th:field="*{image}"/><br>
         <label for="titre">Titre de l'actualité : </label><br>
         <input id="titre" th:field=*{titre} type="text"><br>
         <label for="description">description de l'actualité : </label><br>
