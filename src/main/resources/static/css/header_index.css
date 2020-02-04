@@ -10,16 +10,16 @@ header{
 }
 /* logo */
 #logo {
-    width: 8%;
+    width: 10%;
     height: auto;
     position: absolute;
     margin-left: 1%;
-    margin-top: -2%;
 }
 nav{
     width: 70%;
     margin: 0 auto;
 }
+
 .conteneur-nav{
     position: absolute;
     width: 100%;

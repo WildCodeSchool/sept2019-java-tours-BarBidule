@@ -18,6 +18,7 @@
             <div class="card-image"><img
                     alt="image"
                     th:src="@{${intervenant.imageUrl}}"/></div>
+        </a>
             <!-- Fin de l'image de l'atelier -->
             <!-- Corp de la carte -->
             <div class="card-body">
@@ -33,12 +34,15 @@
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description1}"/>
                 </div>
+                <br>
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description2}"/>
                 </div>
+                <br>
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description3}"/>
                 </div>
+                <br>
                 <div class="card-excerpt">
                     <p th:text="${intervenant.description4}"/>
                 </div>

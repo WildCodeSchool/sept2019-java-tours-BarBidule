@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Le Bar Bidule</title>
-    <link data-th-href="@{/css/header.css}" href="../static/css/header.css" media="all"
+    <link data-th-href="@{/css/header_index.css}" href="../static/css/header_index.css" media="all"
           rel="stylesheet" type="text/css"/>
     <link data-th-href="@{/css/defaut_text.css}" href="../static/css/defaut_text.css" media="all"
           rel="stylesheet" type="text/css"/>
@@ -13,9 +13,9 @@
 <body>
 <header th:fragment="header">
     <!--logo-->
-        <a href="/index" th:href="@{/}">
-            <img id="logo" alt="logo bar bidule" th:src="@{/img/logo.png}">
-        </a>
+    <a href="/index" th:href="@{/}">
+        <img alt="logo bar bidule" id="logo" th:src="@{/img/logo.png}">
+    </a>
     <!--Menu déroulant-->
     <nav>
         <div class="conteneur-nav">
@@ -57,84 +57,76 @@
         </div>
     </nav>
 </header>
-<br>
-
 
 <!-- Section grid -->
 
 <div class="wrapper">
-    <h1 class="box a">Bienvenue au Bar Bidule</h1><br>
-    <section class="box b">
-        <p th:text="${coordonnee.horaire}" /><br>
+    <div class="titre">
+        <h1>bienvenue au Bar Bidule</h1>
+        <p>Bar Associatif pour Enfant à Tours</p>
+    </div>
+    <section id="prog">
+        <h2>Voici notre programmation d'évènements pour le mois</h2>
+        <p>Téléchargez la <a download="/files/programmation.pdf"
+                             href="/files/programmation.pdf"
+                             th:href="@{/files/programmation.pdf}">ici</a></p>
     </section>
-    <section class="box c">
-        <h2>Voici notre programation d'évènements pour le mois</h2><br>
-        <p>Affichez la <a target="/files/programmation.pdf" href="/files/programmation.pdf"
-                          th:href="@{/files/programmation.pdf}">ici</a>
-        </p>
-        <p>Ou téléchargez la <a download="/files/programmation.pdf"
-                                href="/files/programmation.pdf"
-                                th:href="@{/files/programmation.pdf}">ici</a></p>
+    <section id="resto">
+        <p id="txt_resto"><a href="/leBarBidule/#resto">Le Bar Bidule, c'est aussi un restaurant</a><br>
+            <img th:src="@{/img/table-147314.svg}" alt="image restauration"></p>
+
     </section>
-    <article class="box e">
-        <ul class="carte">
-            <li class="card">
-                <!-- Image de l'actualité -->
-                <div class="card-image"><img
-                        alt="image"
-                        th:src="@{${actualite.ImageUrl}}"/></div>
-                <!-- Fin de l'image de l'atelier -->
-                <!-- Corp de la carte -->
-                <div class="card-body">
-
-                    <div class="card-title">
-                        <h3 class="card-title" th:text="${actualite.titre}"/>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="card-excerpt">
-                        <p th:text="${actualite.description}"/>
-                    </div>
-
-                    <br>
-                    <div class="card-name">
-                        <p class="card-name">Vous pouvez en savoir plus en cliquant
-                            <a th:href="@{${actualite.lien}}">ici</a></p>
-                    </div>
-                </div>
-                <!-- Fin du corp de la carte -->
-                <br>
-                <hr>
-            </li>
-        </ul>
-    </article>
-    <article class="box d">
-        <p>Je testouille voir ce que ça donne
-            <a href="https://www.facebook.com/events/494146774544780/">Contes de la princesse Yvettes ft. Arsène</a>
-        </p>
-    </article>
 </div>
+<article id="actu">
+    <ul class="carte_actu">
+        <!-- Image de l'actualité -->
+        <div class="actu_image"><img
+                alt="image"
+                th:src="@{${actualite.ImageUrl}}"/></div>
+        <!-- Fin de l'image de l'actualité -->
+        <li class="actu_card">
+            <!-- Corp de la carte -->
+
+                <div class="actu-title">
+                    <h3 class="card-title" th:text="${actualite.titre}"/>
+                </div>
+                <br>
+                <br>
+                <div class="actu-excerpt">
+                    <p th:text="${actualite.description}"/>
+                </div>
+
+                <br>
+                <div class="actu-name">
+                    <p class="card-name">Vous pouvez en savoir plus en cliquant
+                        <a th:href="@{${actualite.lien}}">ici</a></p>
+                </div>
+            <!-- Fin du corp de la carte -->
+            <br>
+        </li>
+    </ul>
+</article>
 
 <!-- Footer-->
-<footer th:fragment="footer" class="footer">
+<footer class="footer" th:fragment="footer">
     <div class="footer__addr">
-            <a href="/index" th:href="@{/}">
-                <img id="logo__footer" alt="logo bar bidule" th:src="@{/img/logo.png}">
+        <a href="/index" th:href="@{/}">
+            <img alt="logo bar bidule" id="logo__footer" th:src="@{/img/logo.png}">
+        </a>
+        <h2>Contact</h2>
+
+        <address>
+            64, rue d'Entraigues. 37000, TOURS<br>
+            <a href="facebook.com">
+                <img alt="icone facebook" src="img/fb_icon.png">
             </a>
-      <h2>Contact</h2>
-      
-      <address>
-        64, rue d'Entraigues. 37000, TOURS<br>
-        <a href="facebook.com">
-            <img src="img/fb_icon.png" alt="icone facebook">
-        </a>
-        <a href="mailto:">
-            <img src="img/mail_icon.png" alt="icone messagerie">
-        </a>
-      </address>
+            <a href="mailto:">
+                <img alt="icone messagerie" src="img/mail_icon.png">
+            </a>
+        </address>
 
     </div>
-    
+
     <ul class="footer__nav">
         <li class="nav__item nav"><a th:href="@{/leBarBidule}"><h2 class="nav__title">Le Bar Bidule &ensp;</h2></a>
             <ul class="nav__ul">
@@ -145,7 +137,8 @@
                 <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
             </ul>
         </li>
-        <li class="nav__item nav__item--extra"><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants &ensp;</h2></a>
+        <li class="nav__item nav__item--extra"><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants
+            &ensp;</h2></a>
             <ul class="nav__ul nav__ul--extra">
                 <li><a href="/cafe/#cafe">C'est quoi un Café des Enfants ?</a></li>
                 <li><a href="/cafe/#histoire">L'histoire du Bar Bidule</a></li>
@@ -169,10 +162,10 @@
         </li>
     </ul>
 
-      <div class="legal__links">
+    <div class="legal__links">
         <span>Made with <span class="heart">♥</span></span>
-      </div>
-  </footer>
+    </div>
+</footer>
 
 <!--Fin du footer-->
 </body>

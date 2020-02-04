@@ -23,8 +23,9 @@ html {
     font-size: 100%;
 }
 
+/*noinspection CssInvalidPropertyValue*/
 *, *::before, *::after {
-    box-sizing: inherit,
+    box-sizing: inherit;
 }
 
 img, video {
@@ -61,48 +62,34 @@ p {
 }
 
 h1 {
-    font-family: acumin-pro, system-ui, sans-serif;
-    margin: 0;
+    font-family: "Indie Flower", serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 1%;
 }
 
 h2 {
     font-family: acumin-pro, system-ui, sans-serif;
+    font-size: 1.5rem;
     margin: 0;
 }
+
 hr {
-    display: block;
-    clear: both;
-    height: 0;
-    margin: 40px 0 80px;
-    padding: 0;
-    border: 0;
-    font-family: arial;
-    text-align: center;
-    font-size: 60px;
-    line-height: 1;
+    height: 0.25rem;
+    margin: auto;
+    color: #fff;;
 }
 
-hr:after {
-    content: "\2601 \2729 \2601";
-    height: 0;
-    letter-spacing: 1em;
-    color: darkgreen;
-}
-
-.leBarBidule {
-    margin-top: 17%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
-
-.leBarBidule > p {
-    text-align: center;
+.decal {
+    margin-top: 5%;
 }
 
 .titre_section {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    width: 100%;
 }
 
 .img_titre_section {
@@ -115,7 +102,19 @@ hr:after {
     display: flex;
     flex-direction: column;
     margin: auto;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
 }
+
+.contenuSpoiler > p {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+    width: 80%;
+    margin: auto;
+}
+
 
 /***
  Zone de code qui gère le reply
@@ -152,17 +151,20 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     float: right;
     font-family: 'Patrick Hand SC', cursive;
     align-self: center;
-    background: transparent;
+    background: darkorange;
     padding: 1rem 1rem;
     margin: 0 1rem;
     transition: all .5s ease;
-    color: #41403E;
+    color: white;
     font-size: 1.2rem;
     letter-spacing: 1px;
     outline: none;
     box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     transform: scale(var(--ggs, 1));
+}
+.boutonAfficher:hover{
+    color: black;
 }
 
 .boutonAfficher::after,
@@ -194,17 +196,20 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     float: right;
     font-family: 'Patrick Hand SC', cursive;
     align-self: center;
-    background: transparent;
+    background: darkorange;
     padding: 1rem 1rem;
     margin: 0 1rem;
     transition: all .5s ease;
-    color: #41403E;
+    color: white;
     font-size: 1.2rem;
     letter-spacing: 1px;
     outline: none;
     box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     transform: scale(var(--ggs, 1));
+}
+.boutonMasquer:hover{
+    color: black;
 }
 
 .boutonMasquer::after,
@@ -250,11 +255,12 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, .3);
 }
 
-#admin{
+#admin {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 /***
  Zone de code qui gère les cartes (intervenants).
  ***/
@@ -262,41 +268,18 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 .card {
     width: 400px; /*1*/
     height: auto;
-    margin: 0px auto; /*2*/
+    margin: 0 auto; /*2*/
     background-color: white; /*3*/
-    box-shadow: 0px 5px 20px #999; /*4*/
+    box-shadow: 0 5px 20px #999; /*4*/
 }
-.card a { /*5*/
-    color: #333;
-    text-decoration: none;
-}
-.card:hover .card-image img { /*6*/
-    width: 160%;
-    filter: grayscale(0);
-}
-.card-image {
-    height: 250px;/*1*/
-    position: relative;/*2*/
-    overflow: hidden;/*3*/
-}
-.card-image img {
-    width: 150%;/*4*/
-    /*5 - Méthode de centrage en fonction de la taille de l'image */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    filter: grayscale(1);/*6*/
-    /*7 - Transition */
-    transition-property: filter width;
-    transition-duration: .3s;
-    transition-timing-function: ease;
-}
+
+
 .card-body {
-    text-align:center;  /*1*/
+    text-align: center; /*1*/
     padding: 15px 20px; /*2*/
     box-sizing: border-box; /*3*/
 }
+
 .card-name {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -306,15 +289,16 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 }
 
 .card-name, .card-title {
-    text-align:center;
-    text-transform:uppercase;
+    text-align: center;
+    text-transform: uppercase;
     font-weight: bold;
 }
 
 .card-name, .card-excerpt {
     color: #777;
 }
-.card .buttonBox{
+
+.card .buttonBox {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -331,35 +315,131 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     .leBarBidule {
         margin-top: 0;
     }
-/***
-Zone de code qui gère le grid de la page d'accueil.
-***/
-    .leBarBidule{
+
+    /***
+    Zone de code qui gère le grid de la page d'accueil.
+    ***/
+    .wrapper {
+        width: 100%;
+        height: 45rem;
         display: grid;
-        grid-template-areas: "presentation presentation" "horaire prog" "evenement evenement";
+        background-image: url("../img/index.jpg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        grid-template-areas: ". ." "titre titre" ". ." "programmation restauration";
         grid-gap: 10%;
     }
-    .welcome{
-        grid-area: presentation;
+
+    #resto {
+        grid-area: restauration;
         width: 100%;
-        padding: 10px;
+        z-index: 5;
     }
-    .horaire{
-        width: 100%;
-        grid-area: horaire;
-        border: solid darkgreen;
-        padding: 10px;
+
+    #txt_resto {
+        text-align: center;
+        background-color: white;
+        opacity: 0.9;
+        align-self: center;
+        padding: 1rem;
+        width: 80%;
     }
-    .prog{
-        width: 100%;
-        grid-area: prog;
-        border: solid darkgreen;
-        padding: 10px;
+    #txt_resto img{
+        width: 30%;
     }
-    .actu{
+    #txt_resto a {
+        text-decoration: none;
+        color: #2f2f2f;
+        font-family: 'Indie Flower', cursive;
+        font-size: inherit;
+    }
+
+    .titre {
+        grid-area: titre;
+        width: 30%;
+        height: auto;
+        text-align: center;
+        background-color: white;
+        opacity: 0.9;
+        z-index: 5;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .titre p {
+        text-align: center;
+    }
+
+    #prog {
+        grid-area: programmation;
+        z-index: 5;
+        background-color: white;
+        box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, .2);
+        width: 60%;
+        margin: auto;
+        opacity: 0.9;
+        padding: 1rem;
+    }
+
+    #prog > h2 {
+        text-align: center;
+        font-family: 'Indie Flower', cursive;
+        font-size: inherit;
+    }
+
+    #prog > p {
+        text-align: center;
+        font-family: 'Patrick Hand SC', cursive;
+    }
+    #prog  a{
+        text-decoration: none;
+        color: darkorange;
+    }
+
+    #actu {
+        z-index: 5;
         width: 100%;
-        grid-area: evenement;
-        padding: 10px;
+        margin: auto;
+        font-family: 'Indie Flower', cursive;
+
+    }
+
+    .carte_actu {
+        margin-top: 2%;
+        width: 80%;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+
+    .actu_image {
+        width: 25%;
+        background-color: white;
+        align-self: center;
+        margin: auto;
+        padding: 0.5rem;
+    }
+
+    .actu_image > img {
+        max-height: 10rem;
+        justify-content: center;
+    }
+
+    .actu_card {
+        background-color: white;
+        text-align: center;
+        align-self: center;
+    }
+
+    .actu_card p {
+        text-align: center;
+    }
+    .actu-name a{
+        color: darkorange;
+        text-decoration: none;
     }
 }
 
@@ -367,65 +447,51 @@ Zone de code qui gère le grid de la page d'accueil.
 
 /* FOOTER */
 
-*, *:before, *:after {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    font-size: 14px;
-    background-color: #f4f4f4;
-    align-items: start;
-    min-height: 100vh;
-  }
-  
-  .footer {
+.footer {
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
     color: #2f2f2f;
     background-color: #fff;
     border-top: 1px solid #e5e5e5;
-  }
-  
-  .footer > * {
-    flex:  1 100%;
-  }
-  
-  .footer__addr {
+    margin-top: 2%;
+}
+
+.footer > * {
+    flex: 1 100%;
+}
+
+.footer__addr {
     margin-right: 1.25em;
     margin-bottom: 2em;
-  }
-  
-  .footer__logo {
+}
+
+.footer__logo {
     font-family: 'American Typewriter', serif;
     font-weight: 400;
-    text-transform: lowercase;
     font-size: 1.5rem;
     color: #F2D194;
     text-transform: capitalize;
-  }
-  
-  .footer__addr h2 {
+}
+
+.footer__addr h2 {
     margin-top: 1.3em;
     font-size: 15px;
     font-weight: 400;
-  }
-  
-  .nav__title {
+}
+
+.nav__title {
     font-weight: 400;
     font-size: 15px;
     color: black;
-  }
-  
-  .footer address {
+}
+
+.footer address {
     font-style: normal;
     color: #999;
-  }
-  
-  .footer__btn {
+}
+
+.footer__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -438,82 +504,81 @@ Zone de code qui gère le grid de la page d'accueil.
     margin: 0.6em 0;
     font-size: 1rem;
     padding: 0 1.3em;
-  }
-  
-  .footer ul {
+}
+
+.footer ul {
     list-style: none;
     padding-left: 0;
-  }
-  
-  .footer li {
+}
+
+.footer li {
     line-height: 2em;
-  }
-  
-  .footer a {
+}
+
+.footer a {
     text-decoration: none;
-  }
-  
-  .footer__nav {
+}
+
+.footer__nav {
     display: flex;
-      flex-flow: row wrap;
-  }
-  
-  .footer__nav > * {
+    flex-flow: row wrap;
+}
+
+.footer__nav > * {
     flex: 1 50%;
     margin-right: 1.25em;
-  }
-  
-  .nav__ul a {
+}
+
+.nav__ul a {
     color: #F2D194;
-  }
-  
+}
 
 
-  .nav__ul--extra {
+.nav__ul--extra {
     column-count: 2;
     column-gap: 1.25em;
-  }
-  
-  .legal {
+}
+
+.legal {
     display: flex;
     flex-wrap: wrap;
     color: #999;
-  }
-    
-  .legal__links {
+}
+
+.legal__links {
     display: flex;
     align-items: center;
-  }
-  
-  .heart {
+}
+
+.heart {
     color: #2f2f2f;
-  }
+}
 
-  #logo__footer {
-      width: 30%;
-  }
+#logo__footer {
+    width: 30%;
+}
 
-  
-  @media screen and (min-width: 24.375em) {
+
+@media screen and (min-width: 24.375em) {
     .legal .legal__links {
-      margin-left: auto;
+        margin-left: auto;
     }
-  }
-  
-  @media screen and (min-width: 40.375em) {
+}
+
+@media screen and (min-width: 40.375em) {
     .footer__nav > * {
-      flex: 1;
+        flex: 1;
     }
-    
+
     .nav__item--extra {
-      flex-grow: 2;
+        flex-grow: 2;
     }
-    
+
     .footer__addr {
-      flex: 1 0px;
+        flex: 1 0;
     }
-    
+
     .footer__nav {
-      flex: 2 0px;
+        flex: 2 0;
     }
-  }
+}
