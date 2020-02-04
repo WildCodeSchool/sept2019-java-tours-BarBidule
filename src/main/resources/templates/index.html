@@ -118,19 +118,18 @@
 <!-- Footer-->
 <footer th:fragment="footer" class="footer">
     <div class="footer__addr">
-            <a href="/index" th:href="@{/}">
-                <img id="logo__footer" alt="logo bar bidule" th:src="@{/img/logo.png}">
-            </a>
-      <h2>Contact</h2>
-      
-      <address>
-        64, rue d'Entraigues. 37000, TOURS<br>
+        <h2 id="contact__title">Contact</h2>
+        <div class="social_media">
         <a href="facebook.com">
             <img src="img/fb_icon.png" alt="icone facebook">
         </a>
         <a href="mailto:">
             <img src="img/mail_icon.png" alt="icone messagerie">
         </a>
+    </div>
+
+      <address>
+        64, rue d'Entraigues <br>37000, TOURS</br>
       </address>
 
     </div>
@@ -145,8 +144,8 @@
                 <li><a href="/leBarBidule/#anniversaires">les anniversaires</a></li>
             </ul>
         </li>
-        <li class="nav__item nav__item--extra"><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants &ensp;</h2></a>
-            <ul class="nav__ul nav__ul--extra">
+        <li class="nav__item "><a th:href="@{/cafe}"><h2 class="nav__title">Un Café des Enfants &ensp;</h2></a>
+            <ul class="nav__ul">
                 <li><a href="/cafe/#cafe">C'est quoi un Café des Enfants ?</a></li>
                 <li><a href="/cafe/#histoire">L'histoire du Bar Bidule</a></li>
                 <li><a href="/cafe/#adherents">Les adhérents</a></li>

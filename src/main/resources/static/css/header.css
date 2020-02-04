@@ -6,7 +6,7 @@ header{
     font-family: 'Indie Flower', cursive;
     position: fixed;
     z-index: 6;
-    background-color: #F2D194;
+    background-color: #f17e30;
 
 }
 #logo {
@@ -74,7 +74,7 @@ nav a{
     background-color: RGBa(200,200,200,0.8);
 }
 footer{
-    background-color: #F2D194;
+    background-color: #f17e30;
 }
 
 @media screen and (min-width: 900px){
@@ -101,7 +101,7 @@ footer{
     nav input[type=checkbox]:checked + ul, nav ul{
         display: flex;
         flex-flow: row wrap;
-        background-color: #F2D194;
+        background-color: #f17e30;
     }
     nav ul li{
         position: relative;
