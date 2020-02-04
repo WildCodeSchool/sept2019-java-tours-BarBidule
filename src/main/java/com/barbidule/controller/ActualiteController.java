@@ -47,7 +47,7 @@ public class ActualiteController {
     }
 
     // Controller qui permet la modification de l'actualité.
-    // TODO Trouver de prévenir que l'on ne doit envoyer un fichier que sous forme ".png"
+    // TODO Trouver un moyen d'envoyer autre chose qu'un ".png"
     @PostMapping("/admin/actualite")
     public String saveEdit(@Valid Actualite actualite, BindingResult bindingResult, Model model) {
         // Si le validateur rencontre des erreurs dans les champs renseignés
