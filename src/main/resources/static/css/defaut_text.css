@@ -402,6 +402,7 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
         width: 100%;
         margin: auto;
         font-family: 'Indie Flower', cursive;
+        background-color: white;
 
     }
 
@@ -467,6 +468,20 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 
 /* FOOTER */
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    align-items: start;
+    min-height: 100vh;
+}
+
 .footer {
     display: flex;
     flex-flow: row wrap;
@@ -474,11 +489,10 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     color: #2f2f2f;
     background-color: #fff;
     border-top: 1px solid #e5e5e5;
-    margin-top: 2%;
 }
 
 .footer > * {
-    flex: 1 100%;
+    flex:  1 100%;
 }
 
 .footer__addr {
@@ -487,10 +501,10 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 }
 
 .footer__logo {
-    font-family: 'American Typewriter', serif;
-    font-weight: 400;
+    font-family: 'Indie Flower', cursive;    font-weight: 400;
+    text-transform: lowercase;
     font-size: 1.5rem;
-    color: #F2D194;
+    color: #f17e30;
     text-transform: capitalize;
 }
 
@@ -517,7 +531,7 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     justify-content: center;
     height: 36px;
     max-width: max-content;
-    background-color: #F2D194;
+    background-color: #f17e30;
     border-radius: 100px;
     color: white;
     line-height: 0;
@@ -550,8 +564,18 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 }
 
 .nav__ul a {
-    color: #F2D194;
+    color: #f17e30;
 }
+
+.nav__ul a:hover {
+    color: #2f2f2f;
+}
+
+.nav__title {
+    font-family: 'Indie Flower', cursive;
+    text-transform: capitalize;
+}
+
 
 
 .nav__ul--extra {
@@ -579,6 +603,16 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
 }
 
 
+#contact__title {
+    margin-bottom: 20px;
+}
+.social_media {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 @media screen and (min-width: 24.375em) {
     .legal .legal__links {
         margin-left: auto;
@@ -595,10 +629,10 @@ div.spoiler[data-isOuvert="true"] input.boutonAfficher {
     }
 
     .footer__addr {
-        flex: 1 0;
+        flex: 1 0px;
     }
 
     .footer__nav {
-        flex: 2 0;
+        flex: 2 0px;
     }
 }

@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
         auth.inMemoryAuthentication()
                 .withUser("barbidule")
-                .password(encoder.encode("barbidule"))
+                .password(encoder.encode("barbipass1"))
                 .roles("ADMIN");
     }
 }
